@@ -44,6 +44,7 @@
 		E98EF54A200B7DFA00EFC13D /* SDS-iOS-APPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SDS-iOS-APPTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98EF54E200B7DFA00EFC13D /* SDS_iOS_APPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDS_iOS_APPTests.swift; sourceTree = "<group>"; };
 		E98EF550200B7DFA00EFC13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E98EF55D200B911400EFC13D /* ProjectOxfordFace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectOxfordFace-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +110,7 @@
 		E98EF538200B7DFA00EFC13D /* SDS-iOS-APP */ = {
 			isa = PBXGroup;
 			children = (
+				E98EF55D200B911400EFC13D /* ProjectOxfordFace-Bridging-Header.h */,
 				E98EF539200B7DFA00EFC13D /* AppDelegate.swift */,
 				E98EF53B200B7DFA00EFC13D /* ViewController.swift */,
 				E98EF53D200B7DFA00EFC13D /* Main.storyboard */,

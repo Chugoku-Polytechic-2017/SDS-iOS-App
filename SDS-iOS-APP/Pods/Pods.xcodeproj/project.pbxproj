@@ -177,7 +177,6 @@
 		DBB9DC07B072095D15DA2CEA27A6FCBC /* MPOSimilarFace.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPOSimilarFace.h; path = Pod/Classes/MPOSimilarFace.h; sourceTree = "<group>"; };
 		E0D04FD9AAC81BB4F1772BDCCF2BF987 /* MPOFaceList.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPOFaceList.m; path = Pod/Classes/MPOFaceList.m; sourceTree = "<group>"; };
 		E2A52FAB29AEAB954D2887718A2E2E9C /* MPOAddPersistedFaceResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPOAddPersistedFaceResult.h; path = Pod/Classes/MPOAddPersistedFaceResult.h; sourceTree = "<group>"; };
-		E98EF559200B8C7500EFC13D /* ProjectOxfordFace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ProjectOxfordFace-Bridging-Header.h"; path = "../../SDS-iOS-APP/ProjectOxfordFace-Bridging-Header.h"; sourceTree = "<group>"; };
 		EBF1EB0EA53277E74BF270C933E8ADF0 /* MPOCandidate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPOCandidate.m; path = Pod/Classes/MPOCandidate.m; sourceTree = "<group>"; };
 		ED9C614282C9986A69535B4F8052FE0D /* MPOFaceServiceClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MPOFaceServiceClient.m; path = Pod/Classes/MPOFaceServiceClient.m; sourceTree = "<group>"; };
 		EE23BF592F25BD3796424B53415F96E2 /* MPOFaceHeadPose.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MPOFaceHeadPose.h; path = Pod/Classes/MPOFaceHeadPose.h; sourceTree = "<group>"; };
@@ -292,7 +291,6 @@
 				76E0342AE7E0449C42737F0A43F33A4F /* MPOVerifyResult.h */,
 				CA85875387F8C9C39342BFC685488433 /* MPOVerifyResult.m */,
 				0FD1628B22C157BE0E8EE2378BA32D9A /* Support Files */,
-				E98EF559200B8C7500EFC13D /* ProjectOxfordFace-Bridging-Header.h */,
 			);
 			path = ProjectOxfordFace;
 			sourceTree = "<group>";
