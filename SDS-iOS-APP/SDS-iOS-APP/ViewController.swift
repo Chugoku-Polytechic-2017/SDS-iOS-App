@@ -8,6 +8,7 @@
 
 import UIKit
 import ProjectOxfordFace
+import Keys
 
 class ViewController: UIViewController {
 
