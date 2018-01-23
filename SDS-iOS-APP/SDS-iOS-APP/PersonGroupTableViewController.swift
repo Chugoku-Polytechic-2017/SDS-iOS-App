@@ -10,7 +10,7 @@ import UIKit
 import ProjectOxfordFace
 import Keys
 
-class ViewController: UIViewController {
+class PersonGroupTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
