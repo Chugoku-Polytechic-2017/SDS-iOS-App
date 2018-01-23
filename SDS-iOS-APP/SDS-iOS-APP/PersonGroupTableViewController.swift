@@ -40,6 +40,19 @@ class PersonGroupTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    private func setCell(cell: UITableViewCell, row: Int) -> UITableViewCell {
+        cell.textLabel?.text = personGroups[row].name
+        cell.detailTextLabel?.text = personGroups[row].userData
+        return cell
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "subtitle") {
+            return setCell(cell: cell, row: indexPath.row)
+        }
+        let cell = UITableViewCell()
+        return setCell(cell: cell, row: indexPath.row)
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return personGroups.count
