@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import ProjectOxfordFace
+
+protocol FaceAPIType {
+    var keys: SDSIOSAPPKeys { get }
+    var faceAPIClient: MPOFaceServiceClient { get set }
+}
