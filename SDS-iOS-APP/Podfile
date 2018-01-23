@@ -13,4 +13,12 @@ target 'SDS-iOS-APP' do
     # Pods for testing
   end
 
+  plugin 'cocoapods-keys', {
+    :project => "SDS-iOS-APP",
+    :keys => [
+      "FACEAPIKEY",
+      "FACEAPIURL"
+    ]
+  }
+
 end
