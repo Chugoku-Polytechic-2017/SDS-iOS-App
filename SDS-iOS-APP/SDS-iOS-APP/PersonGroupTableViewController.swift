@@ -29,7 +29,8 @@ class PersonGroupTableViewController: UITableViewController {
             groups.forEach({ personGroup in
                 print(personGroup.name)
                 print(personGroup.personGroupId)
-            })            
+            })
+            self.personGroups = groups
         })
         // Do any additional setup after loading the view, typically from a nib.
     }
