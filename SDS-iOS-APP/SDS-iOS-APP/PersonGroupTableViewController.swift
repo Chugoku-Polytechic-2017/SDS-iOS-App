@@ -12,6 +12,8 @@ import Keys
 
 class PersonGroupTableViewController: UITableViewController {
 
+    var personGroups: [MPOPersonGroup] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let keys = SDSIOSAPPKeys()
