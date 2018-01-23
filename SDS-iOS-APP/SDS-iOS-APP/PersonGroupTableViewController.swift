@@ -31,6 +31,7 @@ class PersonGroupTableViewController: UITableViewController {
                 print(personGroup.personGroupId)
             })
             self.personGroups = groups
+            self.tableView.reloadData()
         })
         // Do any additional setup after loading the view, typically from a nib.
     }
