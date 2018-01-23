@@ -41,5 +41,9 @@ class PersonGroupTableViewController: UITableViewController {
     }
 
 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return personGroups.count
+    }
+
 }
 
