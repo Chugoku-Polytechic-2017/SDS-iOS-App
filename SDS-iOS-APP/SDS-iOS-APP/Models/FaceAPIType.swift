@@ -8,6 +8,7 @@
 
 import Foundation
 import ProjectOxfordFace
+import Keys
 
 protocol FaceAPIType {
     var keys: SDSIOSAPPKeys { get }
