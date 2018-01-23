@@ -10,7 +10,7 @@ import Foundation
 import ProjectOxfordFace
 import Keys
 
-struct PersonGroups: FaceAPIType {
+struct FaceAPIClient: FaceAPIType {
     var keys: SDSIOSAPPKeys
     var faceAPIClient: MPOFaceServiceClient
     init() {

@@ -16,7 +16,7 @@
 		E98EF544200B7DFA00EFC13D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E98EF542200B7DFA00EFC13D /* LaunchScreen.storyboard */; };
 		E98EF54F200B7DFA00EFC13D /* SDS_iOS_APPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98EF54E200B7DFA00EFC13D /* SDS_iOS_APPTests.swift */; };
 		E992C1B82017969600F1B509 /* FaceAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992C1B72017969600F1B509 /* FaceAPIType.swift */; };
-		E992C1BA201797EA00F1B509 /* PersonGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992C1B9201797EA00F1B509 /* PersonGroups.swift */; };
+		E992C1BA201797EA00F1B509 /* FaceAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992C1B9201797EA00F1B509 /* FaceAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		E98EF550200B7DFA00EFC13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E98EF55D200B911400EFC13D /* ProjectOxfordFace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectOxfordFace-Bridging-Header.h"; sourceTree = "<group>"; };
 		E992C1B72017969600F1B509 /* FaceAPIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceAPIType.swift; sourceTree = "<group>"; };
-		E992C1B9201797EA00F1B509 /* PersonGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonGroups.swift; sourceTree = "<group>"; };
+		E992C1B9201797EA00F1B509 /* FaceAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				E992C1B72017969600F1B509 /* FaceAPIType.swift */,
-				E992C1B9201797EA00F1B509 /* PersonGroups.swift */,
+				E992C1B9201797EA00F1B509 /* FaceAPIClient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -365,7 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E992C1BA201797EA00F1B509 /* PersonGroups.swift in Sources */,
+				E992C1BA201797EA00F1B509 /* FaceAPIClient.swift in Sources */,
 				E98EF53C200B7DFA00EFC13D /* PersonGroupTableViewController.swift in Sources */,
 				E98EF53A200B7DFA00EFC13D /* AppDelegate.swift in Sources */,
 				E992C1B82017969600F1B509 /* FaceAPIType.swift in Sources */,
