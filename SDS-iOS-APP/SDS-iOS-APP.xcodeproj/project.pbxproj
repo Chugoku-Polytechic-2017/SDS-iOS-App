@@ -114,7 +114,6 @@
 				E992C1B5201795AF00F1B509 /* ViewControllers */,
 				E98EF55D200B911400EFC13D /* ProjectOxfordFace-Bridging-Header.h */,
 				E98EF539200B7DFA00EFC13D /* AppDelegate.swift */,
-				E98EF53B200B7DFA00EFC13D /* PersonGroupTableViewController.swift */,
 				E98EF53D200B7DFA00EFC13D /* Main.storyboard */,
 				E98EF540200B7DFA00EFC13D /* Assets.xcassets */,
 				E98EF542200B7DFA00EFC13D /* LaunchScreen.storyboard */,
@@ -135,6 +134,7 @@
 		E992C1B5201795AF00F1B509 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E98EF53B200B7DFA00EFC13D /* PersonGroupTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
