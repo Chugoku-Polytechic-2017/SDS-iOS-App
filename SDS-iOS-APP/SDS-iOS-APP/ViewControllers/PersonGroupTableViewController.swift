@@ -13,26 +13,14 @@ import Keys
 class PersonGroupTableViewController: UITableViewController {
 
     var personGroups: [MPOPersonGroup] = []
+    var faceAPIClient = FaceAPIClient()
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        let keys = SDSIOSAPPKeys()
-        let faceClient = MPOFaceServiceClient(endpointAndSubscriptionKey: keys.fACEAPIURL, key: keys.fACEAPIKEY)        
-        _ = faceClient?.listPersonGroups(completion: { (response, error) in
-            if let e = error {
-                print(e)
-                return
-            }
-            guard let groups = response else {
-                return
-            }
-            groups.forEach({ personGroup in
-                print(personGroup.name)
-                print(personGroup.personGroupId)
-            })
+        super.viewDidLoad()        
+        faceAPIClient.fetchPersonGroupList { (groups) in
             self.personGroups = groups
             self.tableView.reloadData()
-        })
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
