@@ -110,6 +110,7 @@
 		E98EF538200B7DFA00EFC13D /* SDS-iOS-APP */ = {
 			isa = PBXGroup;
 			children = (
+				E992C1B62017961300F1B509 /* Models */,
 				E992C1B5201795AF00F1B509 /* ViewControllers */,
 				E98EF55D200B911400EFC13D /* ProjectOxfordFace-Bridging-Header.h */,
 				E98EF539200B7DFA00EFC13D /* AppDelegate.swift */,
@@ -136,6 +137,13 @@
 			children = (
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E992C1B62017961300F1B509 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
