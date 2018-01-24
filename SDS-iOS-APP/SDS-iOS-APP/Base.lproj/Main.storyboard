@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gnr-7b-9wG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tsI-yY-Z1x">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Person Group Table View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="hY6-4g-F97">
+            <objects>
+                <navigationController id="tsI-yY-Z1x" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="HTo-BK-uCG">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="gnr-7b-9wG" kind="relationship" relationship="rootViewController" id="LH6-PC-28V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CpV-Ul-Mq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1505" y="169"/>
+        </scene>
+        <!--PersonGroup-->
         <scene sceneID="txE-Pz-Vpl">
             <objects>
                 <tableViewController id="gnr-7b-9wG" customClass="PersonGroupTableViewController" customModule="SDS_iOS_APP" customModuleProvider="target" sceneMemberID="viewController">
@@ -48,6 +64,7 @@
                             <outlet property="delegate" destination="gnr-7b-9wG" id="HDL-KL-n6n"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="PersonGroup" id="AAO-OK-cO7"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TU4-O4-tky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
