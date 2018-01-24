@@ -15,12 +15,10 @@ class PersonGroupViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //navigationBarの境界線を透明にする。
+        navigationController?.navigationBar
+            .setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
 
     override func didReceiveMemoryWarning() {
