@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CpV-Ul-Mq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1505" y="169"/>
+            <point key="canvasLocation" x="-1407" y="104"/>
         </scene>
         <!--PersonGroup-->
         <scene sceneID="txE-Pz-Vpl">
@@ -65,10 +65,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="PersonGroup" id="AAO-OK-cO7"/>
+                    <connections>
+                        <segue destination="pM2-OJ-7R4" kind="show" identifier="ShowPersonDetail" id="aNF-j1-Izl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TU4-O4-tky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-292" y="104"/>
+            <point key="canvasLocation" x="-356" y="104"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="HMY-Pt-tLk">
