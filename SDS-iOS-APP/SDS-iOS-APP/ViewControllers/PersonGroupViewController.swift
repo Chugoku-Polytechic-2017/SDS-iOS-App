@@ -12,6 +12,7 @@ import ProjectOxfordFace
 class PersonGroupViewController: UITableViewController {
 
     var personGroup: MPOPersonGroup!
+    var persons: [MPOPerson] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
