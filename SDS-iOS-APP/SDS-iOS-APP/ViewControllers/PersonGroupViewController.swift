@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import ProjectOxfordFace
 
 class PersonGroupViewController: UITableViewController {
+
+    var personGroup: MPOPersonGroup!
 
     override func viewDidLoad() {
         super.viewDidLoad()

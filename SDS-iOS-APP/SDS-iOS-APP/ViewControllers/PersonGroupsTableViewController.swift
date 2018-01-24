@@ -50,14 +50,15 @@ class PersonGroupsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "ShowPersonDetail",
             let personGroupViewController = segue.destination as? PersonGroupViewController,
-            let name = sender as? String else {
+            let group = sender as? MPOPersonGroup else {
             return
         }
-        personGroupViewController.navigationItem.title = name
+        personGroupViewController.personGroup = group
+        personGroupViewController.navigationItem.title = group.name
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowPersonDetail", sender: personGroups[indexPath.row].name)
+        performSegue(withIdentifier: "ShowPersonDetail", sender: personGroups[indexPath.row])
     }
 
 }
