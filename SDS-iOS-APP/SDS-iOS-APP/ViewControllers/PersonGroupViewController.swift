@@ -27,10 +27,13 @@ class PersonGroupViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        if let headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell"), indexPath.row == 0 {
+            return headerCell
+        }
+        if let personCell = tableView.dequeueReusableCell(withIdentifier: "PersonCell") {
+            return personCell
+        }
+        let cell = UITableViewCell()
         return cell
     }
 
