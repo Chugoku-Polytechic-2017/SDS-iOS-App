@@ -10,7 +10,7 @@ import UIKit
 import ProjectOxfordFace
 import Keys
 
-class PersonGroupTableViewController: UITableViewController {
+class PersonGroupsTableViewController: UITableViewController {
 
     var personGroups: [MPOPersonGroup] = []
     var faceAPIClient = FaceAPIClient()

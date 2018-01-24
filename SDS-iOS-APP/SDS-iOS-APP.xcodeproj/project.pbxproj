@@ -10,7 +10,7 @@
 		3C6B37F5A707DDD2741CAE34 /* Pods_SDS_iOS_APPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8E006E805BACDDB1EB39D0 /* Pods_SDS_iOS_APPTests.framework */; };
 		4195B042CEF6F4D70BBD42C1 /* Pods_SDS_iOS_APP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FE6FA06442700E5310EBC7 /* Pods_SDS_iOS_APP.framework */; };
 		E98EF53A200B7DFA00EFC13D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98EF539200B7DFA00EFC13D /* AppDelegate.swift */; };
-		E98EF53C200B7DFA00EFC13D /* PersonGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98EF53B200B7DFA00EFC13D /* PersonGroupTableViewController.swift */; };
+		E98EF53C200B7DFA00EFC13D /* PersonGroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98EF53B200B7DFA00EFC13D /* PersonGroupsTableViewController.swift */; };
 		E98EF53F200B7DFA00EFC13D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E98EF53D200B7DFA00EFC13D /* Main.storyboard */; };
 		E98EF541200B7DFA00EFC13D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E98EF540200B7DFA00EFC13D /* Assets.xcassets */; };
 		E98EF544200B7DFA00EFC13D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E98EF542200B7DFA00EFC13D /* LaunchScreen.storyboard */; };
@@ -39,7 +39,7 @@
 		BCA75849903A94822C80724A /* Pods-SDS-iOS-APP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDS-iOS-APP.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDS-iOS-APP/Pods-SDS-iOS-APP.release.xcconfig"; sourceTree = "<group>"; };
 		E98EF536200B7DFA00EFC13D /* SDS-iOS-APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SDS-iOS-APP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98EF539200B7DFA00EFC13D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E98EF53B200B7DFA00EFC13D /* PersonGroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonGroupTableViewController.swift; sourceTree = "<group>"; };
+		E98EF53B200B7DFA00EFC13D /* PersonGroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonGroupsTableViewController.swift; sourceTree = "<group>"; };
 		E98EF53E200B7DFA00EFC13D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E98EF540200B7DFA00EFC13D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E98EF543200B7DFA00EFC13D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -140,7 +140,7 @@
 		E992C1B5201795AF00F1B509 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E98EF53B200B7DFA00EFC13D /* PersonGroupTableViewController.swift */,
+				E98EF53B200B7DFA00EFC13D /* PersonGroupsTableViewController.swift */,
 				E99290792018AA73008A2CBA /* PersonGroupViewController.swift */,
 			);
 			path = ViewControllers;
@@ -369,7 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E992C1BA201797EA00F1B509 /* FaceAPIClient.swift in Sources */,
-				E98EF53C200B7DFA00EFC13D /* PersonGroupTableViewController.swift in Sources */,
+				E98EF53C200B7DFA00EFC13D /* PersonGroupsTableViewController.swift in Sources */,
 				E98EF53A200B7DFA00EFC13D /* AppDelegate.swift in Sources */,
 				E992907A2018AA73008A2CBA /* PersonGroupViewController.swift in Sources */,
 				E992C1B82017969600F1B509 /* FaceAPIType.swift in Sources */,
