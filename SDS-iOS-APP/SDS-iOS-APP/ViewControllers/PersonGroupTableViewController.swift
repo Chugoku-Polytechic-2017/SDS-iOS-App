@@ -47,5 +47,9 @@ class PersonGroupTableViewController: UITableViewController {
         return personGroups.count
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowPersonDetail", sender: nil)
+    }
+
 }
 
