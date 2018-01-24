@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="-356" y="104"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Person Group View Controller-->
         <scene sceneID="HMY-Pt-tLk">
             <objects>
-                <tableViewController id="pM2-OJ-7R4" sceneMemberID="viewController">
+                <tableViewController id="pM2-OJ-7R4" customClass="PersonGroupViewController" customModule="SDS_iOS_APP" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="c91-5r-QoY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
