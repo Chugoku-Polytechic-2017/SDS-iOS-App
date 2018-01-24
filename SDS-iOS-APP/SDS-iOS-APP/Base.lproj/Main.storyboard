@@ -73,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="-356" y="104"/>
         </scene>
-        <!--Person Group View Controller-->
+        <!--GroupName-->
         <scene sceneID="HMY-Pt-tLk">
             <objects>
                 <tableViewController id="pM2-OJ-7R4" customClass="PersonGroupViewController" customModule="SDS_iOS_APP" customModuleProvider="target" sceneMemberID="viewController">
@@ -96,6 +96,7 @@
                             <outlet property="delegate" destination="pM2-OJ-7R4" id="9b2-rB-WFg"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="GroupName" id="IRV-1s-YoT"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9cL-zh-Rvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
