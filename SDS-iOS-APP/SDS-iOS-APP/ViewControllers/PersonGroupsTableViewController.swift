@@ -47,8 +47,17 @@ class PersonGroupsTableViewController: UITableViewController {
         return personGroups.count
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "ShowPersonDetail",
+            let personGroupViewController = segue.destination as? PersonGroupViewController,
+            let name = sender as? String else {
+            return
+        }
+        personGroupViewController.navigationItem.title = name
+    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowPersonDetail", sender: nil)
+        performSegue(withIdentifier: "ShowPersonDetail", sender: personGroups[indexPath.row].name)
     }
 
 }
