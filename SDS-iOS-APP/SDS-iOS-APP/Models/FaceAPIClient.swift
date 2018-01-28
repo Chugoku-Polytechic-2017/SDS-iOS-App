@@ -30,5 +30,18 @@ struct FaceAPIClient: FaceAPIType {
             response(groups)
         })
     }
+
+    func fetchPersonList(inPersonGroup groupId: String, response: @escaping ([MPOPerson]) -> ()) {
+        _ = faceAPIClient.listPersons(withPersonGroupId: groupId, completionBlock: { (result, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let persons = result else {
+                return
+            }
+            response(persons)
+        })
+    }
     
 }
