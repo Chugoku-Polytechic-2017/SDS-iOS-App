@@ -125,7 +125,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="GroupName" id="IRV-1s-YoT">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QPq-k1-ddE"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QPq-k1-ddE">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="pM2-OJ-7R4" id="29j-mC-DBl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9cL-zh-Rvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
