@@ -18,8 +18,6 @@ class PersonGroupViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //navigationBarの境界線を透明にする。
-        navigationController?.navigationBar
-            .setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
         faceAPIClient.fetchPersonList(inPersonGroup: personGroup.personGroupId) { result in
             self.persons = result
