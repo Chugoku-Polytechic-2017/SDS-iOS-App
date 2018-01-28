@@ -14,6 +14,9 @@ class PersonGroupViewController: UITableViewController {
     var faceAPIClient = FaceAPIClient()
     var personGroup: MPOPersonGroup!
     var persons: [MPOPerson] = []
+    private var numberOfCell: Int {
+        return persons.count + 1
+    }    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +47,7 @@ class PersonGroupViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //(header + person)
-        return persons.count + 1
+        return numberOfCell
     }
 
 }
