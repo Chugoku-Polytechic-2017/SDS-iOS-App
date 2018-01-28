@@ -11,6 +11,7 @@ import ProjectOxfordFace
 
 class PersonGroupViewController: UITableViewController {
 
+    var faceAPIClient = FaceAPIClient()
     var personGroup: MPOPersonGroup!
     var persons: [MPOPerson] = []
 
@@ -20,6 +21,10 @@ class PersonGroupViewController: UITableViewController {
         navigationController?.navigationBar
             .setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        faceAPIClient.fetchPersonList(inPersonGroup: personGroup.personGroupId) { result in
+            self.persons = result
+            self.tableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,16 +37,17 @@ class PersonGroupViewController: UITableViewController {
             return headerCell
         }
         if let personCell = tableView.dequeueReusableCell(withIdentifier: "PersonCell") {
+            // 最初のcellはheaderだから、(row - 1)がperonsのindex。
+            personCell.textLabel?.text = persons[indexPath.row - 1].name
             return personCell
         }
         let cell = UITableViewCell()
         return cell
     }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //(header + person)
+        return persons.count + 1
     }
 
 }
