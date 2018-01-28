@@ -28,6 +28,7 @@ class PersonGroupViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell"), indexPath.row == 0 {
+            headerCell.textLabel?.text = personGroup.userData
             return headerCell
         }
         if let personCell = tableView.dequeueReusableCell(withIdentifier: "PersonCell") {
