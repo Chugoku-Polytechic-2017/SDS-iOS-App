@@ -124,7 +124,9 @@
                             <outlet property="delegate" destination="pM2-OJ-7R4" id="9b2-rB-WFg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="GroupName" id="IRV-1s-YoT"/>
+                    <navigationItem key="navigationItem" title="GroupName" id="IRV-1s-YoT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QPq-k1-ddE"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9cL-zh-Rvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
