@@ -6,7 +6,7 @@ target 'SDS-iOS-APP' do
   use_frameworks!
 
   # Pods for SDS-iOS-APP
-  pod 'ProjectOxfordFace'
+  pod 'ProjectOxfordFace', :path => '~/Documents/Cognitive-Face-iOS'
 
   target 'SDS-iOS-APPTests' do
     inherit! :search_paths
