@@ -32,7 +32,7 @@ class PersonGroupViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func addButtonTapped(_ sender: Any) {
+    @IBAction func editButtonTapped(_ sender: Any) {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
