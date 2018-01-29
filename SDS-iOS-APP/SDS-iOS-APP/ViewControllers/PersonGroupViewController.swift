@@ -43,6 +43,7 @@ class PersonGroupViewController: UITableViewController {
         if let personCell = tableView.dequeueReusableCell(withIdentifier: "PersonCell") {
             // 最初のcellはheaderだから、(row - 1)がperonsのindex。
             personCell.textLabel?.text = persons[indexPath.row - 1].name
+            personCell.detailTextLabel?.text = persons[indexPath.row - 1].userData
             return personCell
         }
         let cell = UITableViewCell()
