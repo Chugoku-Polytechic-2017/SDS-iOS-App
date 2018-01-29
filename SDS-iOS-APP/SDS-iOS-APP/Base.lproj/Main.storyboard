@@ -134,7 +134,7 @@
                     <navigationItem key="navigationItem" title="GroupName" id="IRV-1s-YoT">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="QPq-k1-ddE">
                             <connections>
-                                <action selector="editButtonTapped:" destination="pM2-OJ-7R4" id="29j-mC-DBl"/>
+                                <action selector="addButtonTapped:" destination="pM2-OJ-7R4" id="29j-mC-DBl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

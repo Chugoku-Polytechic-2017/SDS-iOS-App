@@ -32,7 +32,10 @@ class PersonGroupViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func editButtonTapped(_ sender: Any) {
+    @IBAction func addButtonTapped(_ sender: Any) {
+        
+    }
+    }
 
     func setPersonCell(cell: UITableViewCell, row: Int) -> UITableViewCell {        
         cell.textLabel?.text = persons[row].name
