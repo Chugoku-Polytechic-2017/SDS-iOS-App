@@ -33,6 +33,11 @@ class PersonGroupViewController: UITableViewController {
     }
     
     @IBAction func editButtonTapped(_ sender: Any) {
+
+    func setPersonCell(cell: UITableViewCell, row: Int) -> UITableViewCell {        
+        cell.textLabel?.text = persons[row].name
+        cell.detailTextLabel?.text = persons[row].userData
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -42,9 +47,7 @@ class PersonGroupViewController: UITableViewController {
         }
         if let personCell = tableView.dequeueReusableCell(withIdentifier: "PersonCell") {
             // 最初のcellはheaderだから、(row - 1)がperonsのindex。
-            personCell.textLabel?.text = persons[indexPath.row - 1].name
-            personCell.detailTextLabel?.text = persons[indexPath.row - 1].userData
-            return personCell
+            return setPersonCell(cell: personCell, row: indexPath.row - 1)
         }
         let cell = UITableViewCell()
         return cell
