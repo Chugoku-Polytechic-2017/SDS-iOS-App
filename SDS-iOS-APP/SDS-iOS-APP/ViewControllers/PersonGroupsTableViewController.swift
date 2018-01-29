@@ -36,7 +36,7 @@ class PersonGroupsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "subtitle") {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PersonGroupCell") {
             return setCell(cell: cell, row: indexPath.row)
         }
         let cell = UITableViewCell()
