@@ -217,7 +217,26 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pxD-M8-3i9" id="LLq-eH-43T">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQ2-jN-Nsv">
+                                            <rect key="frame" x="159" y="0.0" width="56" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="QxL-Bb-PUx"/>
+                                            </constraints>
+                                            <state key="normal" title="削除">
+                                                <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="QQ2-jN-Nsv" secondAttribute="trailing" constant="160" id="JIa-8K-twq"/>
+                                        <constraint firstItem="QQ2-jN-Nsv" firstAttribute="top" secondItem="LLq-eH-43T" secondAttribute="top" id="jDr-Bd-Ahp"/>
+                                        <constraint firstItem="QQ2-jN-Nsv" firstAttribute="leading" secondItem="LLq-eH-43T" secondAttribute="leading" constant="159" id="p0q-9I-j3w"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstAttribute="height" secondItem="QQ2-jN-Nsv" secondAttribute="height" id="4ab-9b-hv1"/>
+                                </constraints>
                             </tableViewCell>
                         </prototypes>
                         <connections>
