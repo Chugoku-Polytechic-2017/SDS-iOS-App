@@ -112,4 +112,23 @@ class PersonGroupViewController: UITableViewController, SDSViewControllerType {
         return numberOfCell
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "ShowPersonDetail",
+            let personViewController = segue.destination as? PersonViewController,
+            let person = sender as? MPOPerson else {
+                return
+        }
+        personViewController.person = person
+        personViewController.navigationItem.title = person.name
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 1...(persons.count + 1):
+            performSegue(withIdentifier: "ShowPersonDetail", sender: persons[indexPath.row - 1])
+        default:
+            break
+        }
+    }
+
 }
