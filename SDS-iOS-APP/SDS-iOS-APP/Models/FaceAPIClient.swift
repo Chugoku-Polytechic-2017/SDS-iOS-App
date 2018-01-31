@@ -27,7 +27,11 @@ struct FaceAPIClient: FaceAPIType {
             guard let groups = result else {
                 return
             }
-            response(groups)
+            response(
+                groups.filter({ group -> Bool in
+                    group.personGroupId == "smart-door-system-demo"
+                })
+            )
         })
     }
 
