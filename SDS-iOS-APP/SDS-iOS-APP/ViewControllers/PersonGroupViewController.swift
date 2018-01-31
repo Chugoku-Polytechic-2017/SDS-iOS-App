@@ -79,7 +79,7 @@ class PersonGroupViewController: UITableViewController {
     }
     
     @IBAction func deleteButtonTapped(_ sender: Any) {
-        let deleteAlert = alertView.deleteAction(
+        let deleteAlert = alertView.deleteAlert(
             title: "グループを削除します。",
             message: "\(personGroup.name)を削除しますか？") { _ in
             self.deletePersonGroup()

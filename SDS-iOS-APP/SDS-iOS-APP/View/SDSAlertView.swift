@@ -11,7 +11,7 @@ import UIKit
 
 struct SDSAlertView {
 
-    func deleteAction(title: String, message: String, handler: @escaping (UIAlertAction) -> ()) -> UIAlertController {
+    func deleteAlert(title: String, message: String, handler: @escaping (UIAlertAction) -> ()) -> UIAlertController {
         let alertController = UIAlertController(
             title: title,
             message: message,
