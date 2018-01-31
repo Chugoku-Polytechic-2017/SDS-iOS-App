@@ -93,6 +93,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E982BAF02021D7F900311474 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E98EF52D200B7DFA00EFC13D = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +123,7 @@
 		E98EF538200B7DFA00EFC13D /* SDS-iOS-APP */ = {
 			isa = PBXGroup;
 			children = (
+				E982BAF02021D7F900311474 /* View */,
 				E992C1B62017961300F1B509 /* Models */,
 				E992C1B5201795AF00F1B509 /* ViewControllers */,
 				E98EF55D200B911400EFC13D /* ProjectOxfordFace-Bridging-Header.h */,
