@@ -44,13 +44,9 @@ struct FaceAPIClient: FaceAPIType {
         })
     }
 
-    func createPerson(toPersonGroup groupId: String, name: String, userData: String?, response: @escaping () -> ()) {        
+    func createPerson(toPersonGroup groupId: String, name: String, userData: String?, response: @escaping (Error?) -> ()) {
         _ = faceAPIClient.createPerson(withPersonGroupId: groupId, name: name, userData: userData, completionBlock: { (_, error) in
-            if let error = error {
-                print(error)
-                return
-            }
-            response()
+            response(error)
         })
     }
 
