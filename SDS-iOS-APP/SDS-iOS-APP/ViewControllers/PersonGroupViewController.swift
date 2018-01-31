@@ -23,6 +23,10 @@ class PersonGroupViewController: UITableViewController, SDSViewControllerType {
         super.viewDidLoad()
         //navigationBarの境界線を透明にする。
         navigationController?.navigationBar.shadowImage = UIImage()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchPersonList()
     }
 
