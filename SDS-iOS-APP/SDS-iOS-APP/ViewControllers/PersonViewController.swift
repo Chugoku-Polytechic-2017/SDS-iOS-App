@@ -46,6 +46,10 @@ class PersonViewController: UITableViewController {
         })
     }
 
+
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

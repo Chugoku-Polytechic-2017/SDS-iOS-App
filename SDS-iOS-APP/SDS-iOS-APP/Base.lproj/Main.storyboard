@@ -226,6 +226,9 @@
                                             <state key="normal" title="削除">
                                                 <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="deleteButtonTapped:" destination="cRf-Zu-o5S" eventType="touchUpInside" id="ZBw-5A-22p"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
