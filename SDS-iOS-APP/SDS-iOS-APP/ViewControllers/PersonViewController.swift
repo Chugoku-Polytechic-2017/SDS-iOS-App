@@ -22,11 +22,23 @@ class PersonViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        setPersistedFaceIds(ids: person.persistedFaceIds)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func setPersistedFaceIds(ids: [Any]) {
+        persistedFaceIds = ids.map({ any -> String? in
+            guard let id = any as? String else {
+                return nil
+            }
+            return id
+        }).flatMap({ (id) -> String? in
+            id
+        })
     }
 
     // MARK: - Table view data source
