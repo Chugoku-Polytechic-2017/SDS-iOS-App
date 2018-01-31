@@ -10,6 +10,7 @@
 		3C6B37F5A707DDD2741CAE34 /* Pods_SDS_iOS_APPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8E006E805BACDDB1EB39D0 /* Pods_SDS_iOS_APPTests.framework */; };
 		4195B042CEF6F4D70BBD42C1 /* Pods_SDS_iOS_APP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FE6FA06442700E5310EBC7 /* Pods_SDS_iOS_APP.framework */; };
 		E95C27E62022017A009F24D6 /* SDSViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C27E52022017A009F24D6 /* SDSViewControllerType.swift */; };
+		E95C27E820220A5E009F24D6 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C27E720220A5E009F24D6 /* PersonViewController.swift */; };
 		E982BAF22021D83F00311474 /* SDSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982BAF12021D83F00311474 /* SDSAlertView.swift */; };
 		E98EF53A200B7DFA00EFC13D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98EF539200B7DFA00EFC13D /* AppDelegate.swift */; };
 		E98EF53C200B7DFA00EFC13D /* PersonGroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98EF53B200B7DFA00EFC13D /* PersonGroupsTableViewController.swift */; };
@@ -40,6 +41,7 @@
 		B2FE6FA06442700E5310EBC7 /* Pods_SDS_iOS_APP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDS_iOS_APP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA75849903A94822C80724A /* Pods-SDS-iOS-APP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDS-iOS-APP.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDS-iOS-APP/Pods-SDS-iOS-APP.release.xcconfig"; sourceTree = "<group>"; };
 		E95C27E52022017A009F24D6 /* SDSViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDSViewControllerType.swift; sourceTree = "<group>"; };
+		E95C27E720220A5E009F24D6 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		E982BAF12021D83F00311474 /* SDSAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDSAlertView.swift; sourceTree = "<group>"; };
 		E98EF536200B7DFA00EFC13D /* SDS-iOS-APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SDS-iOS-APP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98EF539200B7DFA00EFC13D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				E98EF53B200B7DFA00EFC13D /* PersonGroupsTableViewController.swift */,
 				E99290792018AA73008A2CBA /* PersonGroupViewController.swift */,
 				E95C27E52022017A009F24D6 /* SDSViewControllerType.swift */,
+				E95C27E720220A5E009F24D6 /* PersonViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				E992C1BA201797EA00F1B509 /* FaceAPIClient.swift in Sources */,
 				E95C27E62022017A009F24D6 /* SDSViewControllerType.swift in Sources */,
 				E98EF53C200B7DFA00EFC13D /* PersonGroupsTableViewController.swift in Sources */,
+				E95C27E820220A5E009F24D6 /* PersonViewController.swift in Sources */,
 				E98EF53A200B7DFA00EFC13D /* AppDelegate.swift in Sources */,
 				E992907A2018AA73008A2CBA /* PersonGroupViewController.swift in Sources */,
 				E992C1B82017969600F1B509 /* FaceAPIType.swift in Sources */,
