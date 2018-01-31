@@ -9,8 +9,11 @@
 import UIKit
 import ProjectOxfordFace
 
-class PersonViewController: UITableViewController {
+class PersonViewController: UITableViewController, SDSViewControllerType {
 
+    var alertView = SDSAlertView()
+    var faceAPIClient = FaceAPIClient()
+    var personGroupId: String!
     var person: MPOPerson!
     var persistedFaceIds: [String] = []
     var numberOfCell: Int {
@@ -46,9 +49,30 @@ class PersonViewController: UITableViewController {
         })
     }
 
+    func deletePerson() {
+        faceAPIClient.deletePerson(
+            groupId: personGroupId,
+            personId: person.personId) { error in
+                if let error = error {
+                    self.showErrorAlert(
+                        title: "エラー",
+                        message: error.localizedDescription,
+                        handler: nil
+                    )
+                }
+                self.navigationController?.popViewController(
+                    animated: true
+                )
+        }
+    }
 
     @IBAction func deleteButtonTapped(_ sender: Any) {
-        
+        let deleteAlert = alertView.deleteAlert(
+            title: "ユーザーの削除",
+            message: "\(person.name)を削除しますか？\n登録済みの顔情報も失われます。") { _ in
+                self.deletePerson()
+        }
+        present(deleteAlert, animated: true, completion: nil)
     }
     // MARK: - Table view data source
 
