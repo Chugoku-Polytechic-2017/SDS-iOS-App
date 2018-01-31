@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import ProjectOxfordFace
 
 class PersonViewController: UITableViewController {
 
+    var person: MPOPerson!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
