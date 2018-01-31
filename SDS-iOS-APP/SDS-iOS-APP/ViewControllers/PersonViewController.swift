@@ -12,6 +12,7 @@ import ProjectOxfordFace
 class PersonViewController: UITableViewController {
 
     var person: MPOPerson!
+    var persistedFaceIds: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
