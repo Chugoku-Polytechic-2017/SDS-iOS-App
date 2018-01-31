@@ -70,6 +70,7 @@ class PersonViewController: UITableViewController {
         case 1:
             cell = tableView.dequeueReusableCell(withIdentifier: "PersistedFaceIdCell")
             guard persistedFaceIds.count != 0 else {
+                cell?.textLabel?.text = "なし"
                 break
             }
             cell?.textLabel?.text = persistedFaceIds[indexPath.row]
