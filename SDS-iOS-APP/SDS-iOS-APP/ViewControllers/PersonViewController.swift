@@ -13,6 +13,11 @@ class PersonViewController: UITableViewController {
 
     var person: MPOPerson!
     var persistedFaceIds: [String] = []
+    var numberOfCell: Int {
+        get {
+            return persistedFaceIds.count + 2
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
