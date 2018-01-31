@@ -58,7 +58,7 @@ struct FaceAPIClient: FaceAPIType {
         })
     }
 
-    func createPersonGroup(name: String, userData:String, response: @escaping () -> ()) {
+    func createPersonGroup(name: String, userData:String?, response: @escaping () -> ()) {
         _ = faceAPIClient.createPersonGroup(
             withId: "smart-door-system-demo",
             name: name,
