@@ -14,6 +14,7 @@ class PersonGroupViewController: UITableViewController {
     var faceAPIClient = FaceAPIClient()
     var personGroup: MPOPersonGroup!
     var persons: [MPOPerson] = []
+    let alertView = SDSAlertView()
     private var numberOfCell: Int {
         return persons.count + 2
     }    
@@ -33,6 +34,14 @@ class PersonGroupViewController: UITableViewController {
         faceAPIClient.fetchPersonList(inPersonGroup: personGroup.personGroupId) { result in
             self.persons = result
             self.tableView.reloadData()
+        }
+    }
+
+    private func deletePersonGroup() {
+        self.faceAPIClient.deletePersonGroup(withGroupId: self.personGroup.personGroupId) {
+            self.navigationController?.popViewController(
+                animated: true
+            )
         }
     }
     
@@ -67,6 +76,15 @@ class PersonGroupViewController: UITableViewController {
         alert.addAction(action)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        let deleteAlert = alertView.deleteAction(
+            title: "グループを削除します。",
+            message: "\(personGroup.name)を削除しますか？") { _ in
+            self.deletePersonGroup()
+        }
+        present(deleteAlert, animated: true, completion: nil)
     }
 
     func setPersonCell(cell: UITableViewCell, row: Int) -> UITableViewCell {        
