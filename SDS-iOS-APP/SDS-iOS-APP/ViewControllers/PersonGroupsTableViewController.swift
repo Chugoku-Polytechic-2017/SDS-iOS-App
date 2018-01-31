@@ -77,7 +77,7 @@ class PersonGroupsTableViewController: UITableViewController, SDSViewControllerT
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "ShowPersonDetail",
+        guard segue.identifier == "ShowGroupDetail",
             let personGroupViewController = segue.destination as? PersonGroupViewController,
             let group = sender as? MPOPersonGroup else {
             return
@@ -87,7 +87,7 @@ class PersonGroupsTableViewController: UITableViewController, SDSViewControllerT
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowPersonDetail", sender: personGroups[indexPath.row])
+        performSegue(withIdentifier: "ShowGroupDetail", sender: personGroups[indexPath.row])
     }
 
 }
