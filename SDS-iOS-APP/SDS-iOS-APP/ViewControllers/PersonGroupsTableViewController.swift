@@ -14,6 +14,7 @@ class PersonGroupsTableViewController: UITableViewController {
 
     var personGroups: [MPOPersonGroup] = []
     var faceAPIClient = FaceAPIClient()
+    let alertView = SDSAlertView()
 
     override func viewDidLoad() {
         super.viewDidLoad()        
@@ -38,6 +39,15 @@ class PersonGroupsTableViewController: UITableViewController {
     }
 
     @IBAction func addButtonTapped(_ sender: Any) {
+        let alert = alertView.addAlert(
+        title: "新しいグループを作成",
+        message: "グループ名とUserDataを入力してください。") { (action, name, userData) in
+            self.faceAPIClient.createPersonGroup(
+                name: name, userData: userData, response: {
+                    self.fetchPersonGroupList()
+            })
+        }
+        present(alert, animated: true, completion: nil)
     }
     
     private func setCell(cell: UITableViewCell, row: Int) -> UITableViewCell {
