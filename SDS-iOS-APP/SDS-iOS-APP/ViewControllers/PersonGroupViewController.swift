@@ -119,6 +119,7 @@ class PersonGroupViewController: UITableViewController, SDSViewControllerType {
                 return
         }
         personViewController.person = person
+        personViewController.personGroupId = personGroup.personGroupId
         personViewController.navigationItem.title = person.name
     }
 
