@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C6B37F5A707DDD2741CAE34 /* Pods_SDS_iOS_APPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8E006E805BACDDB1EB39D0 /* Pods_SDS_iOS_APPTests.framework */; };
 		4195B042CEF6F4D70BBD42C1 /* Pods_SDS_iOS_APP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FE6FA06442700E5310EBC7 /* Pods_SDS_iOS_APP.framework */; };
+		E982BAF22021D83F00311474 /* SDSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982BAF12021D83F00311474 /* SDSAlertView.swift */; };
 		E98EF53A200B7DFA00EFC13D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98EF539200B7DFA00EFC13D /* AppDelegate.swift */; };
 		E98EF53C200B7DFA00EFC13D /* PersonGroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98EF53B200B7DFA00EFC13D /* PersonGroupsTableViewController.swift */; };
 		E98EF53F200B7DFA00EFC13D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E98EF53D200B7DFA00EFC13D /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		9F9F7B1092C32B572D6F8BAF /* Pods-SDS-iOS-APPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDS-iOS-APPTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDS-iOS-APPTests/Pods-SDS-iOS-APPTests.release.xcconfig"; sourceTree = "<group>"; };
 		B2FE6FA06442700E5310EBC7 /* Pods_SDS_iOS_APP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDS_iOS_APP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA75849903A94822C80724A /* Pods-SDS-iOS-APP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDS-iOS-APP.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDS-iOS-APP/Pods-SDS-iOS-APP.release.xcconfig"; sourceTree = "<group>"; };
+		E982BAF12021D83F00311474 /* SDSAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDSAlertView.swift; sourceTree = "<group>"; };
 		E98EF536200B7DFA00EFC13D /* SDS-iOS-APP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SDS-iOS-APP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E98EF539200B7DFA00EFC13D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E98EF53B200B7DFA00EFC13D /* PersonGroupsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonGroupsTableViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		E982BAF02021D7F900311474 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E982BAF12021D83F00311474 /* SDSAlertView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				E98EF53A200B7DFA00EFC13D /* AppDelegate.swift in Sources */,
 				E992907A2018AA73008A2CBA /* PersonGroupViewController.swift in Sources */,
 				E992C1B82017969600F1B509 /* FaceAPIType.swift in Sources */,
+				E982BAF22021D83F00311474 /* SDSAlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
