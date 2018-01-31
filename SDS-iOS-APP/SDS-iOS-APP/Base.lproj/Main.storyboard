@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -188,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <containerView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="6OO-PS-MCT">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <connections>
                                 <segue destination="zcK-JG-lGd" kind="embed" id="VCe-Sn-afM"/>
@@ -196,7 +197,7 @@
                         </containerView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FaceAddCell" id="h0o-mh-Wfv">
-                                <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="137.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h0o-mh-Wfv" id="8tc-jy-lHE">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -204,7 +205,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PersistedFaceIdCell" id="DXf-Ze-Ui1">
-                                <rect key="frame" x="0.0" y="143.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="181.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DXf-Ze-Ui1" id="eDL-jX-u82">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -212,7 +213,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DeleteCell" id="pxD-M8-3i9">
-                                <rect key="frame" x="0.0" y="187.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="225.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pxD-M8-3i9" id="LLq-eH-43T">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -258,22 +259,33 @@
             <objects>
                 <viewController id="zcK-JG-lGd" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oet-PG-a9b">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoY-Q6-UiU">
-                                <rect key="frame" x="16" y="0.0" width="343" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoY-Q6-UiU">
+                                <rect key="frame" x="16" y="0.0" width="343" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wii-8b-7tC">
+                                <rect key="frame" x="252" y="42" width="31" height="40"/>
+                                <state key="normal" title="管理"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9X-Wb-LBy">
+                                <rect key="frame" x="92" y="42" width="31" height="40"/>
+                                <state key="normal" title="追加"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96854287385940552" green="0.96868175268173218" blue="0.97243350744247437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="eoY-Q6-UiU" firstAttribute="leading" secondItem="oet-PG-a9b" secondAttribute="leadingMargin" id="4PR-Eq-QVl"/>
-                            <constraint firstItem="eoY-Q6-UiU" firstAttribute="bottom" secondItem="oet-PG-a9b" secondAttribute="bottomMargin" id="7yb-uP-8Ev"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eoY-Q6-UiU" secondAttribute="trailing" id="fxj-ej-WFj"/>
-                            <constraint firstItem="eoY-Q6-UiU" firstAttribute="top" secondItem="oet-PG-a9b" secondAttribute="topMargin" id="qTQ-ze-t6m"/>
+                            <constraint firstAttribute="bottom" secondItem="wii-8b-7tC" secondAttribute="bottom" id="OBX-Ob-vpz"/>
+                            <constraint firstItem="wii-8b-7tC" firstAttribute="baseline" secondItem="F9X-Wb-LBy" secondAttribute="firstBaseline" id="SCh-F8-JhC"/>
+                            <constraint firstItem="wii-8b-7tC" firstAttribute="top" secondItem="oet-PG-a9b" secondAttribute="topMargin" constant="42" id="SHF-6w-HMZ"/>
+                            <constraint firstItem="F9X-Wb-LBy" firstAttribute="centerX" secondItem="oet-PG-a9b" secondAttribute="centerX" constant="-80" id="SrJ-qq-nhU"/>
+                            <constraint firstItem="wii-8b-7tC" firstAttribute="centerX" secondItem="oet-PG-a9b" secondAttribute="centerX" constant="80" id="u4a-tm-PTj"/>
+                            <constraint firstItem="wii-8b-7tC" firstAttribute="top" secondItem="F9X-Wb-LBy" secondAttribute="top" id="veN-qx-9Fe"/>
                         </constraints>
                     </view>
                 </viewController>
