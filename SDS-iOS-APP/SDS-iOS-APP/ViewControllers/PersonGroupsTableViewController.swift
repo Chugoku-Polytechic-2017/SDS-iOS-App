@@ -22,16 +22,21 @@ class PersonGroupsTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        faceAPIClient.fetchPersonGroupList { (groups) in
-            self.personGroups = groups
-            self.tableView.reloadData()
-        }
+        fetchPersonGroupList()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    func fetchPersonGroupList() {
+        faceAPIClient.fetchPersonGroupList { (groups) in
+            self.personGroups = groups
+            self.tableView.reloadData()
+        }
+    }
+
     @IBAction func addButtonTapped(_ sender: Any) {
     }
     
