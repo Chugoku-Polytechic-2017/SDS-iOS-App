@@ -129,6 +129,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="cRf-Zu-o5S" kind="show" id="hJt-Dh-jBD"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeleteCell" id="ahu-e6-EwH">
                                 <rect key="frame" x="0.0" y="116" width="375" height="44"/>
@@ -174,6 +177,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9cL-zh-Rvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="581.60000000000002" y="103.89805097451276"/>
+        </scene>
+        <!--Person-->
+        <scene sceneID="HYY-4H-nQ3">
+            <objects>
+                <tableViewController id="cRf-Zu-o5S" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Igu-pI-lRm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="oVq-eQ-vfX">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oVq-eQ-vfX" id="ffb-at-087">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cRf-Zu-o5S" id="Jb3-xv-vWy"/>
+                            <outlet property="delegate" destination="cRf-Zu-o5S" id="bUX-sj-dvo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Person" id="QXJ-vk-DXU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JFg-46-dru" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1460" y="104"/>
         </scene>
     </scenes>
 </document>
