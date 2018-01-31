@@ -15,7 +15,7 @@ class PersonGroupViewController: UITableViewController {
     var personGroup: MPOPersonGroup!
     var persons: [MPOPerson] = []
     private var numberOfCell: Int {
-        return persons.count + 1
+        return persons.count + 2
     }    
 
     override func viewDidLoad() {
