@@ -64,5 +64,14 @@ struct FaceAPIClient: FaceAPIType {
             response(error)
         })
     }
+
+    func deletePerson(groupId: String, personId: String, response: @escaping (Error?) -> ()) {
+        _ = faceAPIClient.deletePerson(
+            withPersonGroupId: groupId,
+            personId: personId,
+            completionBlock: { error in
+                response(error)
+        })
+    }
     
 }
