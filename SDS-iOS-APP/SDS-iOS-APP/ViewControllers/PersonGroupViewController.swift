@@ -23,14 +23,14 @@ class PersonGroupViewController: UITableViewController {
         super.viewDidLoad()
         //navigationBarの境界線を透明にする。
         navigationController?.navigationBar.shadowImage = UIImage()
-        fetPersonList()
+        fetchPersonList()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
-    func fetPersonList() {
+    func fetchPersonList() {
         faceAPIClient.fetchPersonList(inPersonGroup: personGroup.personGroupId) { result in
             self.persons = result
             self.tableView.reloadData()
@@ -68,7 +68,7 @@ class PersonGroupViewController: UITableViewController {
             }
             let userData = params[1]
             self.faceAPIClient.createPerson(toPersonGroup: self.personGroup.personGroupId, name: name, userData: userData, response: {
-                self.fetPersonList()
+                self.fetchPersonList()
             })
 
         }
