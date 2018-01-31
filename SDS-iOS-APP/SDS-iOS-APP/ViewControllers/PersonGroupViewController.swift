@@ -9,12 +9,12 @@
 import UIKit
 import ProjectOxfordFace
 
-class PersonGroupViewController: UITableViewController {
+class PersonGroupViewController: UITableViewController, SDSViewControllerType {
 
     var faceAPIClient = FaceAPIClient()
     var personGroup: MPOPersonGroup!
     var persons: [MPOPerson] = []
-    let alertView = SDSAlertView()
+    var alertView = SDSAlertView()
     private var numberOfCell: Int {
         return persons.count + 2
     }    
@@ -38,7 +38,14 @@ class PersonGroupViewController: UITableViewController {
     }
 
     private func deletePersonGroup() {
-        self.faceAPIClient.deletePersonGroup(withGroupId: self.personGroup.personGroupId) {
+        self.faceAPIClient.deletePersonGroup(withGroupId: self.personGroup.personGroupId) {error in
+            if let error = error {
+                print(error)
+                self.showErrorAlert(title: "エラー",
+                               message: error.localizedDescription,
+                               handler: nil
+                )
+            }
             self.navigationController?.popViewController(
                 animated: true
             )
