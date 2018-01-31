@@ -76,16 +76,24 @@ class PersonGroupViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell"), indexPath.row == 0 {
-            headerCell.textLabel?.text = personGroup.userData
-            return headerCell
+        let cell: UITableViewCell?
+        switch indexPath.row {
+        case 0:
+            cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell")
+            cell?.textLabel?.text = personGroup.userData
+        case persons.count + 1:
+            cell = tableView.dequeueReusableCell(withIdentifier: "DeleteCell")
+        default:
+            cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell")
         }
-        if let personCell = tableView.dequeueReusableCell(withIdentifier: "PersonCell") {
-            // 最初のcellはheaderだから、(row - 1)がperonsのindex。
-            return setPersonCell(cell: personCell, row: indexPath.row - 1)
+        guard let reuseCell = cell else {
+            return UITableViewCell()
         }
-        let cell = UITableViewCell()
-        return cell
+        
+        if reuseCell.reuseIdentifier == "PersonCell" {
+            return setPersonCell(cell: reuseCell, row: indexPath.row - 1)
+        }
+        return reuseCell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
