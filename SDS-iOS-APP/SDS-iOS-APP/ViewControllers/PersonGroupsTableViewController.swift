@@ -10,11 +10,11 @@ import UIKit
 import ProjectOxfordFace
 import Keys
 
-class PersonGroupsTableViewController: UITableViewController {
+class PersonGroupsTableViewController: UITableViewController, SDSViewControllerType {
 
     var personGroups: [MPOPersonGroup] = []
     var faceAPIClient = FaceAPIClient()
-    let alertView = SDSAlertView()
+    var alertView = SDSAlertView()
 
     override func viewDidLoad() {
         super.viewDidLoad()        
@@ -43,7 +43,15 @@ class PersonGroupsTableViewController: UITableViewController {
         title: "新しいグループを作成",
         message: "グループ名とUserDataを入力してください。") { (action, name, userData) in
             self.faceAPIClient.createPersonGroup(
-                name: name, userData: userData, response: {
+                name: name, userData: userData, response: { error in
+                    if let error = error {
+                        self.showErrorAlert(
+                            title: "エラー",
+                            message: error.localizedDescription,
+                            handler: nil
+                        )
+                        return
+                    }
                     self.fetchPersonGroupList()
             })
         }
