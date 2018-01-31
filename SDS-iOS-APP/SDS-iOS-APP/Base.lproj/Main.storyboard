@@ -64,7 +64,9 @@
                             <outlet property="delegate" destination="gnr-7b-9wG" id="HDL-KL-n6n"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="PersonGroup" id="AAO-OK-cO7"/>
+                    <navigationItem key="navigationItem" title="PersonGroup" id="AAO-OK-cO7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OYJ-T8-4yD"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="pM2-OJ-7R4" kind="show" identifier="ShowPersonDetail" id="aNF-j1-Izl"/>
                     </connections>
