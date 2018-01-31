@@ -27,11 +27,7 @@ struct FaceAPIClient: FaceAPIType {
             guard let groups = result else {
                 return
             }
-            response(
-                groups.filter({ group -> Bool in
-                    group.personGroupId == "smart-door-system-demo"
-                })
-            )
+            response(groups)
         })
     }
 
@@ -60,7 +56,7 @@ struct FaceAPIClient: FaceAPIType {
 
     func createPersonGroup(name: String, userData:String?, response: @escaping () -> ()) {
         _ = faceAPIClient.createPersonGroup(
-            withId: "smart-door-system-demo",
+            withId: name,
             name: name,
             userData: userData, completionBlock: { error in
                 if let error = error {
