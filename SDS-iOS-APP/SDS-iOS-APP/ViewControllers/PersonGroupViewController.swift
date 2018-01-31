@@ -124,7 +124,7 @@ class PersonGroupViewController: UITableViewController, SDSViewControllerType {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 1...(persons.count + 1):
+        case 1...persons.count:
             performSegue(withIdentifier: "ShowPersonDetail", sender: persons[indexPath.row - 1])
         default:
             break
