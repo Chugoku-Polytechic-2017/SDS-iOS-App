@@ -81,14 +81,14 @@ class PersonGroupViewController: UITableViewController, SDSViewControllerType {
         present(deleteAlert, animated: true, completion: nil)
     }
 
-    func setPersonCell(cell: UITableViewCell, row: Int) -> UITableViewCell {        
-        cell.textLabel?.text = persons[row].name
-        cell.detailTextLabel?.text = persons[row].userData
+    func setPersonCell(cell: UITableViewCell?, row: Int) -> UITableViewCell? {
+        cell?.textLabel?.text = persons[row].name
+        cell?.detailTextLabel?.text = persons[row].userData
         return cell
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell?
+        var cell: UITableViewCell?
         switch indexPath.row {
         case 0:
             cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell")
@@ -97,15 +97,13 @@ class PersonGroupViewController: UITableViewController, SDSViewControllerType {
             cell = tableView.dequeueReusableCell(withIdentifier: "DeleteCell")
         default:
             cell = tableView.dequeueReusableCell(withIdentifier: "PersonCell")
+            cell = setPersonCell(cell: cell, row: indexPath.row - 1)
         }
-        guard let reuseCell = cell else {
+        if let reuseCell = cell {
+            return reuseCell
+        } else {
             return UITableViewCell()
         }
-        
-        if reuseCell.reuseIdentifier == "PersonCell" {
-            return setPersonCell(cell: reuseCell, row: indexPath.row - 1)
-        }
-        return reuseCell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
