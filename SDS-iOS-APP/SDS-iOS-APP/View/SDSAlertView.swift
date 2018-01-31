@@ -11,8 +11,25 @@ import UIKit
 
 struct SDSAlertView {
 
+    func failureAlert(title: String, message: String, handler: ((UIAlertAction) -> ())?) -> UIAlertController {
+        let aletController = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: UIAlertControllerStyle.alert)
+        let action = UIAlertAction(
+            title: "OK",
+            style: UIAlertActionStyle.default) { action in
+                guard let closure = handler else {
+                    return
+                }
+                closure(action)
+        }        
+        aletController.addAction(action)
+        return aletController
+    }
+
     func deleteAlert(title: String, message: String, handler: @escaping (UIAlertAction) -> ()) -> UIAlertController {
-        let alertController = UIAlertController(
+        let alertController = UIAlertController (
             title: title,
             message: message,
             preferredStyle: UIAlertControllerStyle.actionSheet
