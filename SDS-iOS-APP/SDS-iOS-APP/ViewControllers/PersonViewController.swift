@@ -55,18 +55,35 @@ class PersonViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return numberOfCell
+        if section == 1 {
+            return persistedFaceIds.count == 0 ? 1 : persistedFaceIds.count
+        } else {
+            return 1
+        }
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        let cell: UITableViewCell?
+        switch indexPath.section {
+        case 0:
+            cell = tableView.dequeueReusableCell(withIdentifier: "FaceAddCell")
+        case 1:
+            cell = tableView.dequeueReusableCell(withIdentifier: "PersistedFaceIdCell")
+            guard persistedFaceIds.count != 0 else {
+                break
+            }
+            cell?.textLabel?.text = persistedFaceIds[indexPath.row]
+        case 2:
+            cell = tableView.dequeueReusableCell(withIdentifier: "DeleteCell")
+        default:
+            cell = nil
+        }
+        if let reuseCell = cell {
+            return reuseCell
+        } else {
+            return UITableViewCell()
+        }
     }
-    */
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
