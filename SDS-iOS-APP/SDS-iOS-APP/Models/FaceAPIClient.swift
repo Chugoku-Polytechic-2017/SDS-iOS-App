@@ -54,6 +54,18 @@ struct FaceAPIClient: FaceAPIType {
         })
     }
 
+    func createPersonGroup(name: String, userData:String, response: @escaping () -> ()) {
+        _ = faceAPIClient.createPersonGroup(
+            withId: "smart-door-system-demo",
+            name: name,
+            userData: userData, completionBlock: { error in
+                if let error = error {
+                    print(error)
+                }
+                response()
+        })
+    }
+
     func deletePersonGroup(withGroupId groupId: String, response: @escaping () -> ()) {
         _ = faceAPIClient.deletePersonGroup(withPersonGroupId: groupId, completionBlock: { (error) in
             if let error = error {
