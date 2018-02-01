@@ -138,8 +138,8 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
     }
 
     func deletePerson() {
-        faceAPIClient.deletePerson(
-            groupId: personGroupId,
+        faceAPIClient.faceAPIClient.deletePerson(
+            withPersonGroupId: personGroupId,
             personId: person.personId) { error in
                 if let error = error {
                     self.showErrorAlert(
@@ -148,9 +148,7 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
                         handler: nil
                     )
                 }
-                self.navigationController?.popViewController(
-                    animated: true
-                )
+                self.navigationController?.popViewController(animated: true)
         }
     }
 
