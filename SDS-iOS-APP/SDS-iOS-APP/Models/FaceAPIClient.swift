@@ -18,15 +18,6 @@ struct FaceAPIClient: FaceAPIType {
         faceAPIClient = MPOFaceServiceClient(endpointAndSubscriptionKey: keys.fACEAPIURL, key: keys.fACEAPIKEY)
     }    
 
-    func createPersonGroup(name: String, userData:String?, response: @escaping (Error?) -> ()) {
-        _ = faceAPIClient.createPersonGroup(
-            withId: name,
-            name: name,
-            userData: userData,
-            completionBlock: response
-        )
-    }
-
     func deletePersonGroup(withGroupId groupId: String, response: @escaping (Error?) -> ()) {
         _ = faceAPIClient.deletePersonGroup(withPersonGroupId: groupId, completionBlock: response
         )

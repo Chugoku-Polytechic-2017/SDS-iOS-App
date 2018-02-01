@@ -46,22 +46,24 @@ class PersonGroupsTableViewController: UITableViewController, SDSViewControllerT
         }
     }
 
+    func createPersonGroup(name:String, userData: String?) {
+        self.faceAPIClient.faceAPIClient.createPersonGroup(
+            withId: name,
+            name: name,
+            userData: userData) { error in
+                if let error = error {
+                    self.showErrorAlert(title: "エラー", message: error.localizedDescription, handler: nil)
+                    return
+                }
+                self.fetchPersonGroupList()
+        }
+    }
+
     @IBAction func addButtonTapped(_ sender: Any) {
         let alert = alertView.addAlert(
         title: "新しいグループを作成",
         message: "グループ名とUserDataを入力してください。") { (action, name, userData) in
-            self.faceAPIClient.createPersonGroup(
-                name: name, userData: userData, response: { error in
-                    if let error = error {
-                        self.showErrorAlert(
-                            title: "エラー",
-                            message: error.localizedDescription,
-                            handler: nil
-                        )
-                        return
-                    }
-                    self.fetchPersonGroupList()
-            })
+            self.createPersonGroup(name: name, userData: userData)
         }
         present(alert, animated: true, completion: nil)
     }
