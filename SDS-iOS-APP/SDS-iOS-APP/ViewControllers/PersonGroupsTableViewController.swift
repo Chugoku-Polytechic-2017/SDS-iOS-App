@@ -32,7 +32,15 @@ class PersonGroupsTableViewController: UITableViewController, SDSViewControllerT
     }
 
     func fetchPersonGroupList() {
-        faceAPIClient.fetchPersonGroupList { (groups) in
+        faceAPIClient.faceAPIClient.listPersonGroups { (result, error) in
+            if let error = error {
+                print(error)
+                self.showErrorAlert(title: "エラー", message: error.localizedDescription, handler: nil)
+                return
+            }
+            guard let groups = result else {
+                return
+            }
             self.personGroups = groups
             self.tableView.reloadData()
         }

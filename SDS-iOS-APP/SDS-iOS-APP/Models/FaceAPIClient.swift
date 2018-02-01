@@ -18,18 +18,6 @@ struct FaceAPIClient: FaceAPIType {
         faceAPIClient = MPOFaceServiceClient(endpointAndSubscriptionKey: keys.fACEAPIURL, key: keys.fACEAPIKEY)
     }
 
-    func fetchPersonGroupList(response: @escaping ([MPOPersonGroup]) -> ()) {
-        _ = faceAPIClient.listPersonGroups(completion: { (result, error) in
-            if let error = error {
-                print(error)
-                return
-            }
-            guard let groups = result else {
-                return
-            }
-            response(groups)
-        })
-    }
 
     func fetchPersonList(inPersonGroup groupId: String, response: @escaping ([MPOPerson]) -> ()) {
         _ = faceAPIClient.listPersons(
