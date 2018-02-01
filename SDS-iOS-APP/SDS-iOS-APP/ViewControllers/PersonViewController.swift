@@ -68,6 +68,21 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
         }
     }
 
+    func deletePersistedFaceid(id: String) {
+        faceAPIClient.deletePersistedFaceId(
+            groupId: personGroupId,
+            personId: person.personId,
+            persistedFaceId: id) { error in
+                if let error = error {
+                    self.showErrorAlert(
+                        title: "エラー",
+                        message: error.localizedDescription,
+                        handler: nil
+                    )
+                }
+        }
+    }
+
     @IBAction func deleteButtonTapped(_ sender: Any) {
         let deleteAlert = alertView.deleteAlert(
             title: "ユーザーの削除",
@@ -123,6 +138,32 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
         default:
             return nil
         }
+    }
+
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.section == 0, persistedFaceIds.count > 0 {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        guard editingStyle == UITableViewCellEditingStyle.delete else {
+            return
+        }
+        let id = persistedFaceIds[indexPath.row]
+        let deleteAlert = alertView.deleteAlert(
+            title: "顔情報の削除",
+            message: "登録した顔情報、\(id)は、削除されます。") { _ in
+                self.deletePersistedFaceid(id: id)
+                self.persistedFaceIds.remove(at: indexPath.row)
+                self.tableView.reloadData()
+                if self.persistedFaceIds.count == 0 {
+                    self.tableView.setEditing(false, animated: true)
+                }
+        }
+        present(deleteAlert, animated: true, completion: nil)
     }
     /*
     // Override to support conditional editing of the table view.
