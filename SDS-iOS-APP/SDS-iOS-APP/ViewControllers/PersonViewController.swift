@@ -50,12 +50,6 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         var userData: String? = nil
-        let alert = alertView.oneTextFieldAlert(
-            title: "userDataの入力",
-            message: "userDataを入力してください。(任意)") {
-                (_, text) in
-                userData = text
-        }
 
         if let pickedImage = info[UIImagePickerControllerOriginalImage]
             as? UIImage {
@@ -64,10 +58,15 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
                 showErrorAlert(title: "エラー", message: "撮影に失敗しました。", handler: nil)
                 return
             }
+            let alert = alertView.oneTextFieldAlert(
+                title: "userDataの入力",
+                message: "userDataを入力してください。(任意)") {
+                    (_, text) in
+                    userData = text
+                    self.addPersonFace(data: data, userData: userData)
+            }
             picker.dismiss(animated: true, completion: nil)
-            self.present(alert, animated: true, completion: {
-                self.addPersonFace(data: data, userData: userData)
-            })
+            self.present(alert, animated: true, completion: nil)
         }
     }
 
