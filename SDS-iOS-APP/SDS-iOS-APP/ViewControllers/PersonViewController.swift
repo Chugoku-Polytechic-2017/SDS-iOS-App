@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import AVFoundation
 import ProjectOxfordFace
 
-class PersonViewController: UITableViewController, SDSViewControllerType, FaceManagerViewControllerDelegate {
+class PersonViewController: UITableViewController, SDSViewControllerType, FaceManagerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var alertView = SDSAlertView()
     var faceAPIClient = FaceAPIClient()
@@ -38,6 +39,42 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
 
     func mangePersistedFaceId() {
         tableView.setEditing(!tableView.isEditing, animated: true)
+    }
+
+    func startUIImagePicker() {
+        let cameraPicker = UIImagePickerController()
+        cameraPicker.sourceType = UIImagePickerControllerSourceType.camera
+        cameraPicker.cameraDevice = UIImagePickerControllerCameraDevice.front
+        cameraPicker.delegate = self
+        self.present(cameraPicker, animated: true, completion: nil)
+    }
+
+    func addPersonFace() {
+        let status = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
+        var errorMessage:String? = nil
+        switch status {
+        case .authorized:
+            // アクセス許可あり
+            startUIImagePicker()
+        case .notDetermined:
+            // まだアクセス許可を聞いていない
+            // カメラが利用可能かチェック
+            if !UIImagePickerController.isSourceTypeAvailable(
+                UIImagePickerControllerSourceType.camera) {
+                errorMessage = "カメラが起動できませんでした。"
+            } else {
+                startUIImagePicker()
+            }
+        case .restricted:
+            // ユーザー自身にカメラへのアクセスが許可されていない
+            errorMessage = "カメラを使用する許可がありません。"
+        case .denied:
+            // アクセス許可されていない
+            errorMessage = "許可がありません。カメラ使うには、設定よりカメラへのアクセスを許可してください。"
+        }
+        if let message = errorMessage {
+            showErrorAlert(title: "エラー", message: message, handler: nil)
+        }
     }
 
     func setPersistedFaceIds(ids: [Any]) {
