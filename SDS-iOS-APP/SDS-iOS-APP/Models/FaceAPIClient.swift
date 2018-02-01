@@ -18,16 +18,6 @@ struct FaceAPIClient: FaceAPIType {
         faceAPIClient = MPOFaceServiceClient(endpointAndSubscriptionKey: keys.fACEAPIURL, key: keys.fACEAPIKEY)
     }    
 
-    func createPerson(toPersonGroup groupId: String, name: String, userData: String?, response: @escaping (Error?) -> ()) {
-        _ = faceAPIClient.createPerson(
-            withPersonGroupId: groupId,
-            name: name,
-            userData: userData,
-            completionBlock: { (_, error) in
-            response(error)
-        })
-    }
-
     func createPersonGroup(name: String, userData:String?, response: @escaping (Error?) -> ()) {
         _ = faceAPIClient.createPersonGroup(
             withId: name,

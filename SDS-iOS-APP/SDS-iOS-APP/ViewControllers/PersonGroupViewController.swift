@@ -34,6 +34,18 @@ class PersonGroupViewController: UITableViewController, SDSViewControllerType {
         super.didReceiveMemoryWarning()
     }
 
+    func createPerson (name: String, userData: String?) {
+        self.faceAPIClient.faceAPIClient.createPerson(
+            withPersonGroupId: personGroup.personGroupId,
+            name: name,
+            userData: userData) { (result, error) in
+                if let error = error {
+                    self.showErrorAlert(title: "エラー", message: error.localizedDescription, handler: nil)
+                }
+                self.fetchPersonList()
+        }
+    }
+
     func fetchPersonList() {
         faceAPIClient.faceAPIClient.listPersons(withPersonGroupId: personGroup.personGroupId) { (result, error) in
             if let error = error {
@@ -68,17 +80,8 @@ class PersonGroupViewController: UITableViewController, SDSViewControllerType {
             title: "新しいユーザーを追加",
             message: "ユーザー名とuserDataを入力してください") {
                 (action, name, userData) in
-                self.faceAPIClient.createPerson(
-                    toPersonGroup: self.personGroup.personGroupId,
-                    name: name,
-                    userData: userData,
-                    response: { error in
-                    if let error = error {
-                        self.showErrorAlert(title: "エラー", message: error.localizedDescription, handler: nil)
-                    }
-                    self.fetchPersonList()
-                })
-        }
+                self.createPerson(name: name, userData: userData)
+            }
         present(deleteAlert, animated: true, completion: nil)
     }
     
