@@ -16,11 +16,24 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
     var alertView = SDSAlertView()
     var personGroupId: String!
     var person: MPOPerson!
-    var persistedFaceIds: [String] = []    
+    var persistedFaceIds: [String] = []
+    var isChangePersonFace = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setPersistedFaceIds(ids: person.persistedFaceIds)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        guard isChangePersonFace else {
+            return
+        }
+        faceAPIClient.trainPersonGroup(withPersonGroupId: personGroupId) { error in
+            if let error = error {
+                self.showErrorAlert(title: "エラー", message: error.localizedDescription, handler: nil)
+            }
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -123,6 +136,7 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
                     self.showErrorAlert(title: "エラー", message: "顔を検出できませんでした。", handler: nil)
                     return
                 }
+                self.isChangePersonFace = true
                 self.persistedFaceIds.append(id)
                 self.tableView.reloadData()
                 SVProgressHUD.dismiss()
