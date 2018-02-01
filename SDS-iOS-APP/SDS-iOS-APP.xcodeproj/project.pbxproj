@@ -10,6 +10,7 @@
 		3C6B37F5A707DDD2741CAE34 /* Pods_SDS_iOS_APPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8E006E805BACDDB1EB39D0 /* Pods_SDS_iOS_APPTests.framework */; };
 		4195B042CEF6F4D70BBD42C1 /* Pods_SDS_iOS_APP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FE6FA06442700E5310EBC7 /* Pods_SDS_iOS_APP.framework */; };
 		E95530C02022BCAA00B0FBF1 /* FaceManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95530BF2022BCAA00B0FBF1 /* FaceManageViewController.swift */; };
+		E95530C42023266B00B0FBF1 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E95530C32023266B00B0FBF1 /* SVProgressHUD.framework */; };
 		E95C27E62022017A009F24D6 /* SDSViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C27E52022017A009F24D6 /* SDSViewControllerType.swift */; };
 		E95C27E820220A5E009F24D6 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95C27E720220A5E009F24D6 /* PersonViewController.swift */; };
 		E982BAF22021D83F00311474 /* SDSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E982BAF12021D83F00311474 /* SDSAlertView.swift */; };
@@ -40,6 +41,8 @@
 		B2FE6FA06442700E5310EBC7 /* Pods_SDS_iOS_APP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SDS_iOS_APP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA75849903A94822C80724A /* Pods-SDS-iOS-APP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SDS-iOS-APP.release.xcconfig"; path = "Pods/Target Support Files/Pods-SDS-iOS-APP/Pods-SDS-iOS-APP.release.xcconfig"; sourceTree = "<group>"; };
 		E95530BF2022BCAA00B0FBF1 /* FaceManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceManageViewController.swift; sourceTree = "<group>"; };
+		E95530C12023264F00B0FBF1 /* SVProgressHUD.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SVProgressHUD.framework.dSYM; path = Carthage/Build/iOS/SVProgressHUD.framework.dSYM; sourceTree = "<group>"; };
+		E95530C32023266B00B0FBF1 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		E95C27E52022017A009F24D6 /* SDSViewControllerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDSViewControllerType.swift; sourceTree = "<group>"; };
 		E95C27E720220A5E009F24D6 /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		E982BAF12021D83F00311474 /* SDSAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDSAlertView.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E95530C42023266B00B0FBF1 /* SVProgressHUD.framework in Frameworks */,
 				4195B042CEF6F4D70BBD42C1 /* Pods_SDS_iOS_APP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +84,8 @@
 		2D2139ABF6737942F3A0D0A2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E95530C32023266B00B0FBF1 /* SVProgressHUD.framework */,
+				E95530C12023264F00B0FBF1 /* SVProgressHUD.framework.dSYM */,
 				B2FE6FA06442700E5310EBC7 /* Pods_SDS_iOS_APP.framework */,
 				8B8E006E805BACDDB1EB39D0 /* Pods_SDS_iOS_APPTests.framework */,
 			);
@@ -174,6 +180,7 @@
 				E98EF534200B7DFA00EFC13D /* Resources */,
 				0DB2B34383E8A1AA29439E8A /* [CP] Embed Pods Frameworks */,
 				D7DD41D8F47A9437E7F77D1B /* [CP] Copy Pods Resources */,
+				E95530C52023269900B0FBF1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -367,6 +374,20 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SDS-iOS-APP/Pods-SDS-iOS-APP-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E95530C52023269900B0FBF1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -536,6 +557,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8D69TY9Z9L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "SDS-iOS-APP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ishikawa.SDS-iOS-APP";
@@ -553,6 +578,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8D69TY9Z9L;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "SDS-iOS-APP/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ishikawa.SDS-iOS-APP";
