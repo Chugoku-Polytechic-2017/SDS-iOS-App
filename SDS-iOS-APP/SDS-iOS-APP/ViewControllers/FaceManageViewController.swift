@@ -11,11 +11,11 @@ import UIKit
 class FaceManageViewController: UIViewController {
 
     @IBOutlet weak var userDataLabel: UILabel!
+    var userData: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        userDataLabel.text = userData
     }
 
     override func didReceiveMemoryWarning() {
