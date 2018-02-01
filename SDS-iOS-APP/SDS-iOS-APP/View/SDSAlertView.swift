@@ -51,6 +51,35 @@ struct SDSAlertView {
         return alertController
     }
 
+    func oneTextFieldAlert(title: String, message: String, handler: @escaping (UIAlertAction,String?) -> ()) -> UIAlertController {
+        let alertController = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: UIAlertControllerStyle.alert
+        )
+        alertController.addTextField { textField in
+            textField.placeholder = "userData(optional)"
+        }
+
+        let action = UIAlertAction(title: "OK", style: .default) { action in
+            guard let paramsTextField = alertController.textFields else {
+                return
+            }
+            let params = paramsTextField.map({ textField -> String? in
+                textField.text
+            })
+            guard let text = params[0] else {
+                return
+            }
+            handler(action, text)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(action)
+        alertController.addAction(cancelAction)
+        return alertController
+    }
+
+
     func addAlert(title: String, message: String, handler: @escaping (UIAlertAction,String,String?) -> ()) -> UIAlertController {
         let alertController = UIAlertController(
             title: title,
