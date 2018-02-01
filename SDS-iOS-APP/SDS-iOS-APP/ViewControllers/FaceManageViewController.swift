@@ -10,6 +10,8 @@ import UIKit
 
 class FaceManageViewController: UIViewController {
 
+    @IBOutlet weak var userDataLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
