@@ -16,15 +16,5 @@ struct FaceAPIClient: FaceAPIType {
     init() {
         keys = SDSIOSAPPKeys()
         faceAPIClient = MPOFaceServiceClient(endpointAndSubscriptionKey: keys.fACEAPIURL, key: keys.fACEAPIKEY)
-    }    
-
-    func deletePersistedFaceId(groupId: String, personId: String, persistedFaceId: String, response: @escaping (Error?) -> ()) {
-        _ = faceAPIClient.deletePersonFace(
-            withPersonGroupId: groupId,
-            personId: personId,
-            persistedFaceId: persistedFaceId,
-            completionBlock: response
-        )
     }
-
 }

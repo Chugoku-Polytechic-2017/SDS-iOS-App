@@ -153,8 +153,8 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
     }
 
     func deletePersistedFaceid(id: String) {
-        faceAPIClient.deletePersistedFaceId(
-            groupId: personGroupId,
+        faceAPIClient.faceAPIClient.deletePersonFace(
+            withPersonGroupId: personGroupId,
             personId: person.personId,
             persistedFaceId: id) { error in
                 if let error = error {
