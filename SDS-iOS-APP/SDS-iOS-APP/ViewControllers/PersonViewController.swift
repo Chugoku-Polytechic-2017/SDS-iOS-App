@@ -52,6 +52,7 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
     func addPersonFace() {
         let status = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         var errorMessage:String? = nil
+
         switch status {
         case .authorized:
             // アクセス許可あり
@@ -72,6 +73,7 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
             // アクセス許可されていない
             errorMessage = "許可がありません。カメラ使うには、設定よりカメラへのアクセスを許可してください。"
         }
+
         if let message = errorMessage {
             showErrorAlert(title: "エラー", message: message, handler: nil)
         }
