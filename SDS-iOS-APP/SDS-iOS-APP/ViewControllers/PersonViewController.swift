@@ -49,6 +49,29 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
         self.present(cameraPicker, animated: true, completion: nil)
     }
 
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        var userData: String? = nil
+        let alert = alertView.oneTextFieldAlert(
+            title: "userDataの入力",
+            message: "userDataを入力してください。(任意)") {
+                (_, text) in
+                userData = text
+        }
+
+        if let pickedImage = info[UIImagePickerControllerOriginalImage]
+            as? UIImage {
+            let jpeg = UIImageJPEGRepresentation(pickedImage, 0.5)
+            guard let data = jpeg else {
+                showErrorAlert(title: "エラー", message: "撮影に失敗しました。", handler: nil)
+                return
+            }
+            picker.dismiss(animated: true, completion: nil)
+            self.present(alert, animated: true, completion: {
+                self.addPersonFace(data: data, userData: userData)
+            })
+        }
+    }
+
     func addButtonTapped() {
         let status = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         var errorMessage:String? = nil
@@ -76,6 +99,30 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
 
         if let message = errorMessage {
             showErrorAlert(title: "エラー", message: message, handler: nil)
+        }
+    }
+
+    func addPersonFace(data: Data, userData: String?) {
+        faceAPIClient.faceAPIClient.addPersonFace(
+            withPersonGroupId: personGroupId,
+            personId: person.personId,
+            data: data,
+            userData: userData,
+            faceRectangle: nil) { (result, error) in
+                if let error = error {
+                    self.showErrorAlert(
+                        title: "エラー",
+                        message: error.localizedDescription,
+                        handler: nil
+                    )
+                    return
+                }
+                guard let id = result?.persistedFaceId else {
+                    self.showErrorAlert(title: "エラー", message: "顔を検出できませんでした。", handler: nil)
+                    return
+                }
+                self.persistedFaceIds.append(id)
+                self.tableView.reloadData()
         }
     }
 
