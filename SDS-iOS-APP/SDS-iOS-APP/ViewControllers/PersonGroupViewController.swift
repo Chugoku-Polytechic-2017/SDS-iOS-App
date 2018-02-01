@@ -11,7 +11,6 @@ import ProjectOxfordFace
 
 class PersonGroupViewController: UITableViewController, SDSViewControllerType {
 
-    var faceAPIClient = FaceAPIClient()
     var personGroup: MPOPersonGroup!
     var persons: [MPOPerson] = []
     var alertView = SDSAlertView()
@@ -35,7 +34,7 @@ class PersonGroupViewController: UITableViewController, SDSViewControllerType {
     }
 
     func createPerson (name: String, userData: String?) {
-        self.faceAPIClient.faceAPIClient.createPerson(
+        faceAPIClient.createPerson(
             withPersonGroupId: personGroup.personGroupId,
             name: name,
             userData: userData) { (result, error) in
@@ -47,7 +46,7 @@ class PersonGroupViewController: UITableViewController, SDSViewControllerType {
     }
 
     func fetchPersonList() {
-        faceAPIClient.faceAPIClient.listPersons(withPersonGroupId: personGroup.personGroupId) { (result, error) in
+        faceAPIClient.listPersons(withPersonGroupId: personGroup.personGroupId) { (result, error) in
             if let error = error {
                 self.showErrorAlert(title: "エラー", message: error.localizedDescription, handler: nil)
             }
@@ -60,7 +59,7 @@ class PersonGroupViewController: UITableViewController, SDSViewControllerType {
     }
 
     private func deletePersonGroup() {
-        faceAPIClient.faceAPIClient.deletePersonGroup(withPersonGroupId: personGroup.personGroupId) { error in
+        faceAPIClient.deletePersonGroup(withPersonGroupId: personGroup.personGroupId) { error in
             if let error = error {
                 self.showErrorAlert(title: "エラー", message: error.localizedDescription, handler: nil)
                 return

@@ -12,8 +12,7 @@ import Keys
 
 class PersonGroupsTableViewController: UITableViewController, SDSViewControllerType {
 
-    var personGroups: [MPOPersonGroup] = []
-    var faceAPIClient = FaceAPIClient()
+    var personGroups: [MPOPersonGroup] = []    
     var alertView = SDSAlertView()
 
     override func viewDidLoad() {
@@ -32,7 +31,7 @@ class PersonGroupsTableViewController: UITableViewController, SDSViewControllerT
     }
 
     func fetchPersonGroupList() {
-        faceAPIClient.faceAPIClient.listPersonGroups { (result, error) in
+        faceAPIClient.listPersonGroups { (result, error) in
             if let error = error {
                 print(error)
                 self.showErrorAlert(title: "エラー", message: error.localizedDescription, handler: nil)
@@ -47,7 +46,7 @@ class PersonGroupsTableViewController: UITableViewController, SDSViewControllerT
     }
 
     func createPersonGroup(name:String, userData: String?) {
-        self.faceAPIClient.faceAPIClient.createPersonGroup(
+        faceAPIClient.createPersonGroup(
             withId: name,
             name: name,
             userData: userData) { error in

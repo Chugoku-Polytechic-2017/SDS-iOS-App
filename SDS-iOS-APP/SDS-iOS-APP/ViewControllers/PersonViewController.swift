@@ -13,7 +13,6 @@ import ProjectOxfordFace
 class PersonViewController: UITableViewController, SDSViewControllerType, FaceManagerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var alertView = SDSAlertView()
-    var faceAPIClient = FaceAPIClient()
     var personGroupId: String!
     var person: MPOPerson!
     var persistedFaceIds: [String] = []    
@@ -103,7 +102,7 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
     }
 
     func addPersonFace(data: Data, userData: String?) {
-        faceAPIClient.faceAPIClient.addPersonFace(
+        faceAPIClient.addPersonFace(
             withPersonGroupId: personGroupId,
             personId: person.personId,
             data: data,
@@ -138,7 +137,7 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
     }
 
     func deletePerson() {
-        faceAPIClient.faceAPIClient.deletePerson(
+        faceAPIClient.deletePerson(
             withPersonGroupId: personGroupId,
             personId: person.personId) { error in
                 if let error = error {
@@ -153,7 +152,7 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
     }
 
     func deletePersistedFaceid(id: String) {
-        faceAPIClient.faceAPIClient.deletePersonFace(
+        faceAPIClient.deletePersonFace(
             withPersonGroupId: personGroupId,
             personId: person.personId,
             persistedFaceId: id) { error in
