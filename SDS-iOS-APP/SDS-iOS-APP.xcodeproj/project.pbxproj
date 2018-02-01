@@ -20,8 +20,6 @@
 		E98EF544200B7DFA00EFC13D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E98EF542200B7DFA00EFC13D /* LaunchScreen.storyboard */; };
 		E98EF54F200B7DFA00EFC13D /* SDS_iOS_APPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98EF54E200B7DFA00EFC13D /* SDS_iOS_APPTests.swift */; };
 		E992907A2018AA73008A2CBA /* PersonGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99290792018AA73008A2CBA /* PersonGroupViewController.swift */; };
-		E992C1B82017969600F1B509 /* FaceAPIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992C1B72017969600F1B509 /* FaceAPIType.swift */; };
-		E992C1BA201797EA00F1B509 /* FaceAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E992C1B9201797EA00F1B509 /* FaceAPIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +55,6 @@
 		E98EF550200B7DFA00EFC13D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E98EF55D200B911400EFC13D /* ProjectOxfordFace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectOxfordFace-Bridging-Header.h"; sourceTree = "<group>"; };
 		E99290792018AA73008A2CBA /* PersonGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonGroupViewController.swift; sourceTree = "<group>"; };
-		E992C1B72017969600F1B509 /* FaceAPIType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceAPIType.swift; sourceTree = "<group>"; };
-		E992C1B9201797EA00F1B509 /* FaceAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceAPIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				E982BAF02021D7F900311474 /* View */,
-				E992C1B62017961300F1B509 /* Models */,
 				E992C1B5201795AF00F1B509 /* ViewControllers */,
 				E98EF55D200B911400EFC13D /* ProjectOxfordFace-Bridging-Header.h */,
 				E98EF539200B7DFA00EFC13D /* AppDelegate.swift */,
@@ -164,15 +159,6 @@
 				E95530BF2022BCAA00B0FBF1 /* FaceManageViewController.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		E992C1B62017961300F1B509 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				E992C1B72017969600F1B509 /* FaceAPIType.swift */,
-				E992C1B9201797EA00F1B509 /* FaceAPIClient.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,14 +374,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E992C1BA201797EA00F1B509 /* FaceAPIClient.swift in Sources */,
 				E95530C02022BCAA00B0FBF1 /* FaceManageViewController.swift in Sources */,
 				E95C27E62022017A009F24D6 /* SDSViewControllerType.swift in Sources */,
 				E98EF53C200B7DFA00EFC13D /* PersonGroupsTableViewController.swift in Sources */,
 				E95C27E820220A5E009F24D6 /* PersonViewController.swift in Sources */,
 				E98EF53A200B7DFA00EFC13D /* AppDelegate.swift in Sources */,
 				E992907A2018AA73008A2CBA /* PersonGroupViewController.swift in Sources */,
-				E992C1B82017969600F1B509 /* FaceAPIType.swift in Sources */,
 				E982BAF22021D83F00311474 /* SDSAlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
