@@ -193,7 +193,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <connections>
-                                <segue destination="zcK-JG-lGd" kind="embed" id="VCe-Sn-afM"/>
+                                <segue destination="zcK-JG-lGd" kind="embed" identifier="ShowFaceManageView" id="VCe-Sn-afM"/>
                             </connections>
                         </containerView>
                         <prototypes>
