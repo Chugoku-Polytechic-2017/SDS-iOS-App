@@ -38,7 +38,9 @@ struct FaceAPIClient: FaceAPIType {
     }
 
     func fetchPersonList(inPersonGroup groupId: String, response: @escaping ([MPOPerson]) -> ()) {
-        _ = faceAPIClient.listPersons(withPersonGroupId: groupId, completionBlock: { (result, error) in
+        _ = faceAPIClient.listPersons(
+            withPersonGroupId: groupId,
+            completionBlock: { (result, error) in
             if let error = error {
                 print(error)
                 return
@@ -51,7 +53,11 @@ struct FaceAPIClient: FaceAPIType {
     }
 
     func createPerson(toPersonGroup groupId: String, name: String, userData: String?, response: @escaping (Error?) -> ()) {
-        _ = faceAPIClient.createPerson(withPersonGroupId: groupId, name: name, userData: userData, completionBlock: { (_, error) in
+        _ = faceAPIClient.createPerson(
+            withPersonGroupId: groupId,
+            name: name,
+            userData: userData,
+            completionBlock: { (_, error) in
             response(error)
         })
     }
@@ -60,24 +66,24 @@ struct FaceAPIClient: FaceAPIType {
         _ = faceAPIClient.createPersonGroup(
             withId: name,
             name: name,
-            userData: userData, completionBlock: { error in
-                response(error)
-        })
+            userData: userData,
+            completionBlock: handler(response: response)
+        )
     }
 
     func deletePersonGroup(withGroupId groupId: String, response: @escaping (Error?) -> ()) {
-        _ = faceAPIClient.deletePersonGroup(withPersonGroupId: groupId, completionBlock: { (error) in
-            response(error)
-        })
+        _ = faceAPIClient.deletePersonGroup(withPersonGroupId: groupId, completionBlock:handler(response: response)
+        )
     }
 
     func deletePerson(groupId: String, personId: String, response: @escaping (Error?) -> ()) {
         _ = faceAPIClient.deletePerson(
             withPersonGroupId: groupId,
             personId: personId,
-            completionBlock: { error in
-                response(error)
-        })
+            completionBlock: handler(response: response)
+        )
+    }
+
     func deletePersistedFaceId(groupId: String, personId: String, persistedFaceId: String, response: @escaping (Error?) -> ()) {
         _ = faceAPIClient.deletePersonFace(
             withPersonGroupId: groupId,
@@ -86,5 +92,4 @@ struct FaceAPIClient: FaceAPIType {
             completionBlock: handler(response: response)
         )
     }
-    
 }
