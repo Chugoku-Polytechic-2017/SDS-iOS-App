@@ -23,7 +23,9 @@ class FaceManageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func manageButtonTapped(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -265,6 +265,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wii-8b-7tC">
                                 <rect key="frame" x="252" y="42" width="31" height="40"/>
                                 <state key="normal" title="管理"/>
+                                <connections>
+                                    <action selector="manageButtonTapped:" destination="zcK-JG-lGd" eventType="touchUpInside" id="4AF-cq-Cga"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9X-Wb-LBy">
                                 <rect key="frame" x="92" y="42" width="31" height="40"/>
