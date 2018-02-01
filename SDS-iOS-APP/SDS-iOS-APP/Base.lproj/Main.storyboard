@@ -242,9 +242,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Person" id="QXJ-vk-DXU"/>
-                    <connections>
-                        <outlet property="faceManageView" destination="6OO-PS-MCT" id="5fD-KS-7C2"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JFg-46-dru" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
