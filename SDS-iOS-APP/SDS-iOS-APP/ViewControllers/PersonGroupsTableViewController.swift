@@ -9,6 +9,7 @@
 import UIKit
 import ProjectOxfordFace
 import Keys
+import SVProgressHUD
 
 class PersonGroupsTableViewController: UITableViewController, SDSViewControllerType {
 
@@ -31,6 +32,7 @@ class PersonGroupsTableViewController: UITableViewController, SDSViewControllerT
     }
 
     func fetchPersonGroupList() {
+        SVProgressHUD.show()
         faceAPIClient.listPersonGroups { (result, error) in
             if let error = error {
                 print(error)
@@ -42,18 +44,22 @@ class PersonGroupsTableViewController: UITableViewController, SDSViewControllerT
             }
             self.personGroups = groups
             self.tableView.reloadData()
+            SVProgressHUD.dismiss()
         }
     }
 
     func createPersonGroup(name:String, userData: String?) {
+        SVProgressHUD.show(withStatus: "追加中")
         faceAPIClient.createPersonGroup(
             withId: name,
             name: name,
             userData: userData) { error in
                 if let error = error {
+                    SVProgressHUD.dismiss()
                     self.showErrorAlert(title: "エラー", message: error.localizedDescription, handler: nil)
                     return
                 }
+                SVProgressHUD.dismiss()
                 self.fetchPersonGroupList()
         }
     }

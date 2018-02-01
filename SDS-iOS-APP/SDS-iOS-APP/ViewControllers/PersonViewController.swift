@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import ProjectOxfordFace
+import SVProgressHUD
 
 class PersonViewController: UITableViewController, SDSViewControllerType, FaceManagerViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -64,6 +65,7 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
                     (_, text) in
                     userData = text
                     self.addPersonFace(data: data, userData: userData)
+                    SVProgressHUD.show(withStatus: "追加中")
             }
             picker.dismiss(animated: true, completion: nil)
             self.present(alert, animated: true, completion: nil)
@@ -108,6 +110,7 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
             userData: userData,
             faceRectangle: nil) { (result, error) in
                 if let error = error {
+                    SVProgressHUD.dismiss()
                     self.showErrorAlert(
                         title: "エラー",
                         message: error.localizedDescription,
@@ -116,11 +119,13 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
                     return
                 }
                 guard let id = result?.persistedFaceId else {
+                    SVProgressHUD.dismiss()
                     self.showErrorAlert(title: "エラー", message: "顔を検出できませんでした。", handler: nil)
                     return
                 }
                 self.persistedFaceIds.append(id)
                 self.tableView.reloadData()
+                SVProgressHUD.dismiss()
         }
     }
 
@@ -136,32 +141,40 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
     }
 
     func deletePerson() {
+        SVProgressHUD.show(withStatus: "削除中")
         faceAPIClient.deletePerson(
             withPersonGroupId: personGroupId,
             personId: person.personId) { error in
                 if let error = error {
+                    SVProgressHUD.dismiss()
                     self.showErrorAlert(
                         title: "エラー",
                         message: error.localizedDescription,
                         handler: nil
                     )
+                    return
                 }
+                SVProgressHUD.dismiss()
                 self.navigationController?.popViewController(animated: true)
         }
     }
 
     func deletePersistedFaceid(id: String) {
+        SVProgressHUD.show(withStatus: "削除中")
         faceAPIClient.deletePersonFace(
             withPersonGroupId: personGroupId,
             personId: person.personId,
             persistedFaceId: id) { error in
+                SVProgressHUD.dismiss()
                 if let error = error {
                     self.showErrorAlert(
                         title: "エラー",
                         message: error.localizedDescription,
                         handler: nil
                     )
+                    return
                 }
+                SVProgressHUD.dismiss()
         }
     }
 

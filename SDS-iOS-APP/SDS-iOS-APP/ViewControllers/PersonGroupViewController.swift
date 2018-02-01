@@ -8,6 +8,7 @@
 
 import UIKit
 import ProjectOxfordFace
+import SVProgressHUD
 
 class PersonGroupViewController: UITableViewController, SDSViewControllerType {
 
@@ -34,36 +35,48 @@ class PersonGroupViewController: UITableViewController, SDSViewControllerType {
     }
 
     func createPerson (name: String, userData: String?) {
+        SVProgressHUD.show(withStatus: "追加中")
         faceAPIClient.createPerson(
             withPersonGroupId: personGroup.personGroupId,
             name: name,
             userData: userData) { (result, error) in
                 if let error = error {
+                    SVProgressHUD.dismiss()
                     self.showErrorAlert(title: "エラー", message: error.localizedDescription, handler: nil)
+                    return
                 }
+                SVProgressHUD.dismiss()
                 self.fetchPersonList()
         }
     }
 
     func fetchPersonList() {
+        SVProgressHUD.show()
         faceAPIClient.listPersons(withPersonGroupId: personGroup.personGroupId) { (result, error) in
             if let error = error {
+                SVProgressHUD.dismiss()
                 self.showErrorAlert(title: "エラー", message: error.localizedDescription, handler: nil)
+                return
             }
             guard let personList = result else {
+                SVProgressHUD.dismiss()
                 return
             }
             self.persons = personList
             self.tableView.reloadData()
+            SVProgressHUD.dismiss()
         }
     }
 
     private func deletePersonGroup() {
+        SVProgressHUD.show(withStatus: "削除中")
         faceAPIClient.deletePersonGroup(withPersonGroupId: personGroup.personGroupId) { error in
             if let error = error {
+                SVProgressHUD.dismiss()
                 self.showErrorAlert(title: "エラー", message: error.localizedDescription, handler: nil)
                 return
             }
+            SVProgressHUD.dismiss()
             self.navigationController?.popViewController(animated: true)
         }
     }
