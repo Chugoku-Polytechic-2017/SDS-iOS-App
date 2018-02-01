@@ -9,7 +9,7 @@
 import UIKit
 import ProjectOxfordFace
 
-class PersonViewController: UITableViewController, SDSViewControllerType {
+class PersonViewController: UITableViewController, SDSViewControllerType, FaceManagerViewControllerDelegate {
 
     var alertView = SDSAlertView()
     var faceAPIClient = FaceAPIClient()
@@ -33,12 +33,17 @@ class PersonViewController: UITableViewController, SDSViewControllerType {
             let childViewController = segue.destination as? FaceManageViewController else {
                 return
         }
+        childViewController.delegate = self
         childViewController.userData = person.userData
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    func mangePersistedFaceId() {
+        tableView.setEditing(!tableView.isEditing, animated: true)
     }
 
     func setPersistedFaceIds(ids: [Any]) {
