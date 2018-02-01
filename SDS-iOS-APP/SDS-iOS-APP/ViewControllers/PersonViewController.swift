@@ -49,7 +49,7 @@ class PersonViewController: UITableViewController, SDSViewControllerType, FaceMa
         self.present(cameraPicker, animated: true, completion: nil)
     }
 
-    func addPersonFace() {
+    func addButtonTapped() {
         let status = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
         var errorMessage:String? = nil
 

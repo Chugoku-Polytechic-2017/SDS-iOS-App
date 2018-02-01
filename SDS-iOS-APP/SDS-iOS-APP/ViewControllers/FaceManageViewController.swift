@@ -10,7 +10,7 @@ import UIKit
 
 protocol FaceManagerViewControllerDelegate {
     func mangePersistedFaceId ()
-    func addPersonFace ()
+    func addButtonTapped ()
 }
 
 class FaceManageViewController: UIViewController {
@@ -34,7 +34,7 @@ class FaceManageViewController: UIViewController {
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
-        delegate.addPersonFace()
+        delegate.addButtonTapped()
     }
     /*
     // MARK: - Navigation
