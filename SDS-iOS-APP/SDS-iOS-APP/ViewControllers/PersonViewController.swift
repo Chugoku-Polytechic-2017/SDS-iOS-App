@@ -15,12 +15,7 @@ class PersonViewController: UITableViewController, SDSViewControllerType {
     var faceAPIClient = FaceAPIClient()
     var personGroupId: String!
     var person: MPOPerson!
-    var persistedFaceIds: [String] = []
-    var numberOfCell: Int {
-        get {
-            return persistedFaceIds.count + 2
-        }
-    }
+    var persistedFaceIds: [String] = []    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,12 +73,12 @@ class PersonViewController: UITableViewController, SDSViewControllerType {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if section == 1 {
+        if section == 0 {
             return persistedFaceIds.count == 0 ? 1 : persistedFaceIds.count
         } else {
             return 1
@@ -94,15 +89,13 @@ class PersonViewController: UITableViewController, SDSViewControllerType {
         let cell: UITableViewCell?
         switch indexPath.section {
         case 0:
-            cell = tableView.dequeueReusableCell(withIdentifier: "FaceAddCell")
-        case 1:
             cell = tableView.dequeueReusableCell(withIdentifier: "PersistedFaceIdCell")
             guard persistedFaceIds.count != 0 else {
                 cell?.textLabel?.text = "なし"
                 break
             }
             cell?.textLabel?.text = persistedFaceIds[indexPath.row]
-        case 2:
+        case 1:
             cell = tableView.dequeueReusableCell(withIdentifier: "DeleteCell")
         default:
             cell = nil
@@ -117,10 +110,8 @@ class PersonViewController: UITableViewController, SDSViewControllerType {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return nil
-        case 1:
             return "persistedFaceId"
-        case 2:
+        case 1:
             return "削除"
         default:
             return nil
