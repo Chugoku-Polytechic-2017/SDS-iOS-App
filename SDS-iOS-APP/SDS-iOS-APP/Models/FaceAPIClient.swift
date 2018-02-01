@@ -16,23 +16,7 @@ struct FaceAPIClient: FaceAPIType {
     init() {
         keys = SDSIOSAPPKeys()
         faceAPIClient = MPOFaceServiceClient(endpointAndSubscriptionKey: keys.fACEAPIURL, key: keys.fACEAPIKEY)
-    }
-
-
-    func fetchPersonList(inPersonGroup groupId: String, response: @escaping ([MPOPerson]) -> ()) {
-        _ = faceAPIClient.listPersons(
-            withPersonGroupId: groupId,
-            completionBlock: { (result, error) in
-            if let error = error {
-                print(error)
-                return
-            }
-            guard let persons = result else {
-                return
-            }
-            response(persons)
-        })
-    }
+    }    
 
     func createPerson(toPersonGroup groupId: String, name: String, userData: String?, response: @escaping (Error?) -> ()) {
         _ = faceAPIClient.createPerson(
