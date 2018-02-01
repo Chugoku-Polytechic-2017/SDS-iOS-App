@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol FaceManagerViewControllerDelegate {
+    func mangePersistedFaceId ()
+}
+
 class FaceManageViewController: UIViewController {
 
     @IBOutlet weak var userDataLabel: UILabel!
     var userData: String?
+    var delegate: FaceManagerViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +29,7 @@ class FaceManageViewController: UIViewController {
     }
     
     @IBAction func manageButtonTapped(_ sender: Any) {
+        delegate?.mangePersistedFaceId()
     }
     
     /*
