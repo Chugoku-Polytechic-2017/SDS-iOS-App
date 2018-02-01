@@ -18,6 +18,12 @@ struct FaceAPIClient: FaceAPIType {
         faceAPIClient = MPOFaceServiceClient(endpointAndSubscriptionKey: keys.fACEAPIURL, key: keys.fACEAPIKEY)
     }
 
+    private func handler(response: @escaping (Error?) -> ()) -> MPOCompletionBlock {
+        return ({(error) in
+            response(error)
+        })
+    }
+
     func fetchPersonGroupList(response: @escaping ([MPOPersonGroup]) -> ()) {
         _ = faceAPIClient.listPersonGroups(completion: { (result, error) in
             if let error = error {
@@ -72,6 +78,13 @@ struct FaceAPIClient: FaceAPIType {
             completionBlock: { error in
                 response(error)
         })
+    func deletePersistedFaceId(groupId: String, personId: String, persistedFaceId: String, response: @escaping (Error?) -> ()) {
+        _ = faceAPIClient.deletePersonFace(
+            withPersonGroupId: groupId,
+            personId: personId,
+            persistedFaceId: persistedFaceId,
+            completionBlock: handler(response: response)
+        )
     }
     
 }
