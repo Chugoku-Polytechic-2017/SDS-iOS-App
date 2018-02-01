@@ -157,9 +157,9 @@
 		E992C1B5201795AF00F1B509 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E95C27E52022017A009F24D6 /* SDSViewControllerType.swift */,
 				E98EF53B200B7DFA00EFC13D /* PersonGroupsTableViewController.swift */,
 				E99290792018AA73008A2CBA /* PersonGroupViewController.swift */,
-				E95C27E52022017A009F24D6 /* SDSViewControllerType.swift */,
 				E95C27E720220A5E009F24D6 /* PersonViewController.swift */,
 				E95530BF2022BCAA00B0FBF1 /* FaceManageViewController.swift */,
 			);
