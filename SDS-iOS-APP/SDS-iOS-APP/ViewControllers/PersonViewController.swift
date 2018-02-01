@@ -16,6 +16,7 @@ class PersonViewController: UITableViewController, SDSViewControllerType {
     var personGroupId: String!
     var person: MPOPerson!
     var persistedFaceIds: [String] = []    
+    @IBOutlet weak var faceManageView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
