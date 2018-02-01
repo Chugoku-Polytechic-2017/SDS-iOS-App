@@ -28,6 +28,14 @@ class PersonViewController: UITableViewController, SDSViewControllerType {
         setPersistedFaceIds(ids: person.persistedFaceIds)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "ShowFaceManageView",
+            let childViewController = segue.destination as? FaceManageViewController else {
+                return
+        }
+        childViewController.userData = person.userData
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
