@@ -60,18 +60,12 @@ class PersonGroupViewController: UITableViewController, SDSViewControllerType {
     }
 
     private func deletePersonGroup() {
-        self.faceAPIClient.deletePersonGroup(withGroupId: self.personGroup.personGroupId) {error in
+        faceAPIClient.faceAPIClient.deletePersonGroup(withPersonGroupId: personGroup.personGroupId) { error in
             if let error = error {
-                print(error)
-                self.showErrorAlert(
-                    title: "エラー",
-                    message: error.localizedDescription,
-                    handler: nil
-                )
+                self.showErrorAlert(title: "エラー", message: error.localizedDescription, handler: nil)
+                return
             }
-            self.navigationController?.popViewController(
-                animated: true
-            )
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
